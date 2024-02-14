@@ -31,7 +31,8 @@ class DrawerModel {
   Widget? attachedScreen;
   bool isNew;
 
-  DrawerModel({this.image, this.title, this.attachedScreen, this.isNew = false});
+  DrawerModel(
+      {this.image, this.title, this.attachedScreen, this.isNew = false});
 }
 
 List<DrawerModel> getDrawerOptions() {
@@ -56,13 +57,15 @@ List<DrawerModel> getDrawerOptions() {
   list.add(DrawerModel(
     image: ic_three_user,
     title: language.groups,
-    attachedScreen: pmpStore.viewGroups ? GroupScreen() : MembershipPlansScreen(),
+    attachedScreen:
+        pmpStore.viewGroups ? GroupScreen() : MembershipPlansScreen(),
   ));
-  if(appStore.showForums)list.add(DrawerModel(
-    image: ic_document,
-    title: language.forums,
-    attachedScreen: MyForumsScreen(),
-  ));
+  if (appStore.showForums)
+    list.add(DrawerModel(
+      image: ic_document,
+      title: language.forums,
+      attachedScreen: MyForumsScreen(),
+    ));
   if (appStore.showBlogs)
     list.add(DrawerModel(
       image: ic_blog,
@@ -144,9 +147,18 @@ List<DrawerModel> getCourseTabs() {
 
 List<DrawerModel> messageTabs() {
   List<DrawerModel> list = [];
-  list.add(DrawerModel(title: language.messages, image: ic_chat, attachedScreen: MessagesTabComponent()));
-  list.add(DrawerModel(title: language.friends, image: ic_two_user, attachedScreen: FriendsTabComponent()));
-  list.add(DrawerModel(title: language.groups, image: ic_three_user, attachedScreen: GroupTabComponent()));
+  list.add(DrawerModel(
+      title: language.messages,
+      image: ic_chat,
+      attachedScreen: MessagesTabComponent()));
+  list.add(DrawerModel(
+      title: language.friends,
+      image: ic_two_user,
+      attachedScreen: FriendsTabComponent()));
+  list.add(DrawerModel(
+      title: language.groups,
+      image: ic_three_user,
+      attachedScreen: GroupTabComponent()));
 
   return list;
 }
@@ -162,8 +174,10 @@ List<FilterModel> getProductFilters() {
   List<FilterModel> list = [];
 
   list.add(FilterModel(value: ProductFilters.date, title: language.latest));
-  list.add(FilterModel(value: ProductFilters.rating, title: language.averageRating));
-  list.add(FilterModel(value: ProductFilters.popularity, title: language.popularity));
+  list.add(
+      FilterModel(value: ProductFilters.rating, title: language.averageRating));
+  list.add(FilterModel(
+      value: ProductFilters.popularity, title: language.popularity));
   list.add(FilterModel(value: ProductFilters.price, title: language.price));
 
   return list;
@@ -174,10 +188,13 @@ List<FilterModel> getOrderStatus() {
 
   list.add(FilterModel(value: OrderStatus.any, title: language.any));
   list.add(FilterModel(value: OrderStatus.pending, title: language.pending));
-  list.add(FilterModel(value: OrderStatus.processing, title: language.processing));
+  list.add(
+      FilterModel(value: OrderStatus.processing, title: language.processing));
   list.add(FilterModel(value: OrderStatus.onHold, title: language.onHold));
-  list.add(FilterModel(value: OrderStatus.completed, title: language.completed));
-  list.add(FilterModel(value: OrderStatus.cancelled, title: language.cancelled));
+  list.add(
+      FilterModel(value: OrderStatus.completed, title: language.completed));
+  list.add(
+      FilterModel(value: OrderStatus.cancelled, title: language.cancelled));
   list.add(FilterModel(value: OrderStatus.refunded, title: language.refunded));
   list.add(FilterModel(value: OrderStatus.failed, title: language.failed));
   list.add(FilterModel(value: OrderStatus.trash, title: language.trash));
@@ -195,12 +212,61 @@ class PostMedia {
 
 List<LanguageDataModel> languageList() {
   return [
-    LanguageDataModel(id: 1, name: 'English', subTitle: 'English', languageCode: 'en', fullLanguageCode: 'en_en-US', flag: 'assets/flag/ic_us.png'),
-    LanguageDataModel(id: 2, name: 'Hindi', subTitle: 'हिंदी', languageCode: 'hi', fullLanguageCode: 'hi_hi-IN', flag: 'assets/flag/ic_hi.png'),
-    LanguageDataModel(id: 3, name: 'Arabic', subTitle: 'عربي', languageCode: 'ar', fullLanguageCode: 'ar_ar-AR', flag: 'assets/flag/ic_ar.png'),
-    LanguageDataModel(id: 4, name: 'French', subTitle: 'français', languageCode: 'fr', fullLanguageCode: 'fr_fr-FR', flag: 'assets/flag/ic_fr.png'),
-    LanguageDataModel(id: 5, name: 'Spanish', subTitle: 'español', languageCode: 'es', fullLanguageCode: 'es_es-ES', flag: 'assets/flag/ic_es.png'),
-    LanguageDataModel(id: 6, name: 'German', subTitle: 'Deutsch', languageCode: 'de', fullLanguageCode: 'de_de-De', flag: 'assets/flag/ic_de.png'),
-    LanguageDataModel(id: 7, name: 'Portuguese', subTitle: 'Português', languageCode: 'pt', fullLanguageCode: 'pt_pt-PT', flag: 'assets/flag/ic_pt.jpg'),
+    LanguageDataModel(
+        id: 0,
+        name: 'Русский',
+        subTitle: 'Русский',
+        languageCode: 'ru',
+        fullLanguageCode: 'ru_ru-RU',
+        flag: 'assets/flag/ic_ru.png'),
+    LanguageDataModel(
+        id: 1,
+        name: 'English',
+        subTitle: 'English',
+        languageCode: 'en',
+        fullLanguageCode: 'en_en-US',
+        flag: 'assets/flag/ic_us.png'),
+    LanguageDataModel(
+        id: 2,
+        name: 'Hindi',
+        subTitle: 'हिंदी',
+        languageCode: 'hi',
+        fullLanguageCode: 'hi_hi-IN',
+        flag: 'assets/flag/ic_hi.png'),
+    LanguageDataModel(
+        id: 3,
+        name: 'Arabic',
+        subTitle: 'عربي',
+        languageCode: 'ar',
+        fullLanguageCode: 'ar_ar-AR',
+        flag: 'assets/flag/ic_ar.png'),
+    LanguageDataModel(
+        id: 4,
+        name: 'French',
+        subTitle: 'français',
+        languageCode: 'fr',
+        fullLanguageCode: 'fr_fr-FR',
+        flag: 'assets/flag/ic_fr.png'),
+    LanguageDataModel(
+        id: 5,
+        name: 'Spanish',
+        subTitle: 'español',
+        languageCode: 'es',
+        fullLanguageCode: 'es_es-ES',
+        flag: 'assets/flag/ic_es.png'),
+    LanguageDataModel(
+        id: 6,
+        name: 'German',
+        subTitle: 'Deutsch',
+        languageCode: 'de',
+        fullLanguageCode: 'de_de-De',
+        flag: 'assets/flag/ic_de.png'),
+    LanguageDataModel(
+        id: 7,
+        name: 'Portuguese',
+        subTitle: 'Português',
+        languageCode: 'pt',
+        fullLanguageCode: 'pt_pt-PT',
+        flag: 'assets/flag/ic_pt.jpg'),
   ];
 }

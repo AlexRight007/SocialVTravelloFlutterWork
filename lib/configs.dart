@@ -1,7 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 
 /// App Name
-const APP_NAME = "Socialv";
+const APP_NAME = "Travello";
 
 /// App Icon src
 const APP_ICON = "assets/app_icon.png";
@@ -10,8 +10,8 @@ const APP_ICON = "assets/app_icon.png";
 const SPLASH_SCREEN_IMAGE = 'assets/images/splash_image.png';
 
 /// OneSignal Notification App Id
-const ONESIGNAL_APP_ID = "<YOUR_ONESIGNAL_APP_ID>";
-const ONESIGNAL_REST_API = '<YOUR_ONESIGNAL_REST_API>';
+const ONESIGNAL_APP_ID = "07823ab7-e2f0-4a73-bce5-b3e26f8841a1";
+const ONESIGNAL_REST_API = 'ZWU4Y2E3NTYtOTNkZC00ZTIxLWJmOTEtYjc0ZTFiNDRiZTg0';
 
 /// NOTE: Do not add slash (/) or (https://) or (http://) at the end of your domain.
 const WEB_SOCKET_DOMAIN = "travello.kz";
@@ -50,27 +50,27 @@ const CONSUMER_KEY = '';
 const CONSUMER_SECRET = '';
 
 /// STRIPE PAYMENT DETAIL
-const STRIPE_MERCHANT_COUNTRY_CODE = 'IN';
-const STRIPE_CURRENCY_CODE = 'INR';
+const STRIPE_MERCHANT_COUNTRY_CODE = 'RU';
+const STRIPE_CURRENCY_CODE = 'RUS';
 
 /// RAZORPAY PAYMENT DETAIL
-const RAZORPAY_CURRENCY_CODE = 'INR';
+const RAZORPAY_CURRENCY_CODE = 'RUS';
 
 /// AGORA
 const AGORA_APP_ID = '';
 
 Country defaultCountry() {
   return Country(
-    phoneCode: '91',
-    countryCode: 'IN',
-    e164Sc: 91,
+    phoneCode: '7',
+    countryCode: 'RU',
+    e164Sc: 7,
     geographic: true,
     level: 1,
-    name: 'India',
-    example: '9123456789',
-    displayName: 'India (IN) [+91]',
-    displayNameNoCountryCode: 'India (IN)',
-    e164Key: '91-IN-0',
-    fullExampleWithPlusSign: '+919123456789',
+    name: 'Kazakhstan',
+    example: '7077777777',
+    displayName: 'Kazakhstan (KZ) [+7]',
+    displayNameNoCountryCode: 'Kazakhstan (KZ)',
+    e164Key: '7-KZ-0',
+    fullExampleWithPlusSign: '+77077777777',
   );
 }

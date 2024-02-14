@@ -7,6 +7,7 @@ import 'package:socialv/language/language_en.dart';
 import 'package:socialv/language/language_fr.dart';
 import 'package:socialv/language/language_hi.dart';
 import 'package:socialv/language/language_pt.dart';
+import 'package:socialv/language/language_ru.dart';
 import 'package:socialv/language/languages.dart';
 
 class AppLocalizations extends LocalizationsDelegate<BaseLanguage> {
@@ -17,6 +18,8 @@ class AppLocalizations extends LocalizationsDelegate<BaseLanguage> {
     switch (locale.languageCode) {
       case 'en':
         return LanguageEn();
+      case 'ru':
+        return LanguageRu();
       case 'ar':
         return LanguageAr();
       case 'hi':
@@ -30,12 +33,13 @@ class AppLocalizations extends LocalizationsDelegate<BaseLanguage> {
       case 'pt':
         return LanguagePt();
       default:
-        return LanguageEn();
+        return LanguageRu();
     }
   }
 
   @override
-  bool isSupported(Locale locale) => LanguageDataModel.languages().contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      LanguageDataModel.languages().contains(locale.languageCode);
 
   @override
   bool shouldReload(LocalizationsDelegate<BaseLanguage> old) => false;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/models/tourvisor/tour_offer_model.dart';
 import 'package:socialv/screens/tourvisor/2.1_hotel_detail_screen.dart';
 import 'package:socialv/utils/constants.dart';
@@ -66,7 +67,7 @@ class HotelListView extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              color: Theme.of(context).colorScheme.background,
+                              color: context.accentColor,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,7 +87,11 @@ class HotelListView extends StatelessWidget {
                                             textAlign: TextAlign.left,
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .titleLarge,
+                                                .titleLarge!
+                                                .copyWith(
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .outline),
                                             overflow: TextOverflow.ellipsis,
                                             softWrap: true,
                                           ),
@@ -232,9 +237,7 @@ class HotelListView extends StatelessWidget {
                                 // ),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .background,
+                                    color: context.accentColor,
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(16.0)),
                                   ),
@@ -244,7 +247,13 @@ class HotelListView extends StatelessWidget {
                                       '${insertSpaceEveryNCharacters(hotelData!.price ?? '', 3)} тг.',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .titleLarge,
+                                          .titleLarge!
+                                          .copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .outline,
+                                          ),
                                     ),
                                   ),
                                 ),

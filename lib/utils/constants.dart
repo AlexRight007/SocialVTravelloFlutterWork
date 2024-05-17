@@ -58,8 +58,8 @@ const AbortFastMessage = 'AbortFastMessage';
 //endregion
 
 /// Demo Login
-const DEMO_USER_EMAIL = "jerry@gmail.com";
-const DEMO_USER_PASSWORD = "123456";
+const DEMO_USER_EMAIL = "";
+const DEMO_USER_PASSWORD = "";
 
 class Constants {
   static const defaultLanguage = 'ru';

@@ -1,28 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/main.dart';
+import 'package:socialv/screens/fragments/tours/tour_deration_fragment.dart';
+import 'package:socialv/screens/fragments/tours/tour_hot_fragment.dart';
+import 'package:socialv/screens/fragments/tours/tour_search_fragment.dart';
 
 import '../../utils/app_constants.dart';
 
-class TourSearchFragment extends StatefulWidget {
+class ToursFragment extends StatefulWidget {
   final ScrollController controller;
 
-  const TourSearchFragment({super.key, required this.controller});
+  const ToursFragment({super.key, required this.controller});
 
   @override
-  State<TourSearchFragment> createState() => _TourSearchFragmentState();
+  State<ToursFragment> createState() => _ToursFragmentState();
 }
 
-class _TourSearchFragmentState extends State<TourSearchFragment>
+class _ToursFragmentState extends State<ToursFragment>
     with TickerProviderStateMixin {
   late TabController tabController;
   int selectedIndex = 0;
+  List<Widget> appTourSearchFragments = [];
+  ScrollController _controller = ScrollController();
 
   @override
   void initState() {
     super.initState();
     tabController = TabController(length: 3, vsync: this);
     tabController.index = 0;
+
+    appTourSearchFragments.addAll([
+      TourDerectionFragment(controller: _controller),
+      TourHotFragment(controller: _controller),
+      TourSearchFragment(controller: _controller),
+    ]);
   }
 
   @override
@@ -35,6 +46,9 @@ class _TourSearchFragmentState extends State<TourSearchFragment>
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 10,
+        ),
         TabBar(
           indicatorColor: context.primaryColor,
           controller: tabController,
@@ -66,9 +80,9 @@ class _TourSearchFragmentState extends State<TourSearchFragment>
                 height: 24,
                 width: 24,
                 fit: BoxFit.cover,
-                // color: selectedIndex == 1
-                //     ? context.primaryColor
-                //     : context.iconColor,
+                color: selectedIndex == 1
+                    ? context.primaryColor
+                    : context.iconColor,
               ).paddingSymmetric(vertical: 11),
             ),
             Tooltip(
@@ -87,6 +101,10 @@ class _TourSearchFragmentState extends State<TourSearchFragment>
             ),
           ],
         ),
+        SizedBox(
+          height: 10,
+        ),
+        appTourSearchFragments[tabController.index],
       ],
     );
   }

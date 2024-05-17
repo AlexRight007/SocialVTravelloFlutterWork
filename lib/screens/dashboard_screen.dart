@@ -12,7 +12,7 @@ import 'package:socialv/screens/fragments/home_fragment.dart';
 import 'package:socialv/screens/fragments/notification_fragment.dart';
 import 'package:socialv/screens/fragments/profile_fragment.dart';
 import 'package:socialv/screens/fragments/search_fragment.dart';
-import 'package:socialv/screens/fragments/toursearch_fragment.dart';
+import 'package:socialv/screens/fragments/tours_fragment.dart';
 import 'package:socialv/screens/home/components/user_detail_bottomsheet_widget.dart';
 import 'package:socialv/screens/membership/screens/membership_plans_screen.dart';
 import 'package:socialv/screens/messages/functions.dart';
@@ -69,7 +69,7 @@ class _DashboardScreenState extends State<DashboardScreen>
   Future<void> init() async {
     appFragments.addAll([
       HomeFragment(controller: _controller),
-      TourSearchFragment(controller: _controller),
+      ToursFragment(controller: _controller),
       SearchFragment(controller: _controller),
       ForumsFragment(controller: _controller),
       NotificationFragment(controller: _controller),

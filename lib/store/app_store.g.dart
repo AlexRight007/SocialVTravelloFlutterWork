@@ -137,22 +137,6 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  late final _$showForumsAtom =
-      Atom(name: 'AppStoreBase.showForums', context: context);
-
-  @override
-  bool get showForums {
-    _$showForumsAtom.reportRead();
-    return super.showForums;
-  }
-
-  @override
-  set showForums(bool value) {
-    _$showForumsAtom.reportWrite(value, super.showForums, () {
-      super.showForums = value;
-    });
-  }
-
   late final _$filterContentAtom =
       Atom(name: 'AppStoreBase.filterContent', context: context);
 
@@ -875,15 +859,6 @@ mixin _$AppStore on AppStoreBase, Store {
         .run(() => super.setMemberShipVisibility(val));
   }
 
-  late final _$setForumsVisibilityAsyncAction =
-      AsyncAction('AppStoreBase.setForumsVisibility', context: context);
-
-  @override
-  Future<void> setForumsVisibility(bool val) {
-    return _$setForumsVisibilityAsyncAction
-        .run(() => super.setForumsVisibility(val));
-  }
-
   late final _$setGamiPressEnableAsyncAction =
       AsyncAction('AppStoreBase.setGamiPressEnable', context: context);
 
@@ -1275,7 +1250,6 @@ showGamiPress: ${showGamiPress},
 showLearnPress: ${showLearnPress},
 showMemberShip: ${showMemberShip},
 isSocialLogin: ${isSocialLogin},
-showForums: ${showForums},
 filterContent: ${filterContent},
 isAuthVerificationEnable: ${isAuthVerificationEnable},
 isWebsocketEnable: ${isWebsocketEnable},

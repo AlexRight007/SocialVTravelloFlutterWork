@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_tabs/flutter_custom_tabs.dart';
+import 'package:flutter_custom_tabs/flutter_custom_tabs.dart' as customTabs;
 import 'package:giphy_get/giphy_get.dart';
 import 'package:html/parser.dart';
 import 'package:image_picker/image_picker.dart';
@@ -141,6 +141,7 @@ String parseHtmlString(String? htmlString) {
   return parse(parse(htmlString).body!.text).documentElement!.text;
 }
 
+String get appNameTopic => APP_NAME.toLowerCase().replaceAll(' ', '_');
 
 void onShareTap(BuildContext context) async {
   if (isAndroid) {
@@ -153,14 +154,12 @@ void onShareTap(BuildContext context) async {
 String getFormattedDate(String date) => DateFormat.yMMMMd('en_US').format(DateTime.parse(date));
 
 List<MemberResponse> getMemberListPref() {
-  if (getStringAsync(SharePreferencesKey.RECENT_SEARCH_MEMBERS).isNotEmpty)
-    return (json.decode(getStringAsync(SharePreferencesKey.RECENT_SEARCH_MEMBERS)) as List).map((i) => MemberResponse.fromJson(i)).toList();
+  if (getStringAsync(SharePreferencesKey.RECENT_SEARCH_MEMBERS).isNotEmpty) return (json.decode(getStringAsync(SharePreferencesKey.RECENT_SEARCH_MEMBERS)) as List).map((i) => MemberResponse.fromJson(i)).toList();
   return [];
 }
 
 List<GroupResponse> getGroupListPref() {
-  if (getStringAsync(SharePreferencesKey.RECENT_SEARCH_GROUPS).isNotEmpty)
-    return (json.decode(getStringAsync(SharePreferencesKey.RECENT_SEARCH_GROUPS)) as List).map((i) => GroupResponse.fromJson(i)).toList();
+  if (getStringAsync(SharePreferencesKey.RECENT_SEARCH_GROUPS).isNotEmpty) return (json.decode(getStringAsync(SharePreferencesKey.RECENT_SEARCH_GROUPS)) as List).map((i) => GroupResponse.fromJson(i)).toList();
   return [];
 }
 
@@ -266,23 +265,23 @@ String formatDate(String date) {
 Future<void> openWebPage(BuildContext context, {required String url}) async {
   final theme = Theme.of(context);
   try {
-    await launch(
-      url,
-      customTabsOption: CustomTabsOption(
-        toolbarColor: theme.primaryColor,
-        enableDefaultShare: true,
-        enableUrlBarHiding: true,
-        showPageTitle: true,
-        animation: CustomTabsSystemAnimation.slideIn(),
-        extraCustomTabs: const <String>['org.mozilla.firefox', 'com.microsoft.emmx'],
+    await customTabs.launchUrl(
+      Uri.parse(url),
+      customTabsOptions: customTabs.CustomTabsOptions(
+        colorSchemes: customTabs.CustomTabsColorSchemes.defaults(toolbarColor: theme.primaryColor),
+        animations: customTabs.CustomTabsSystemAnimations.slideIn(),
+        urlBarHidingEnabled: true,
+        shareState: customTabs.CustomTabsShareState.on,
+        browser: customTabs.CustomTabsBrowserConfiguration(
+          fallbackCustomTabs: [
+            'org.mozilla.firefox',
+            'com.microsoft.emmx',
+          ],
+          headers: {'key': 'value'},
+        ),
       ),
-      safariVCOption: SafariViewControllerOption(
-        preferredBarTintColor: theme.primaryColor,
-        preferredControlTintColor: Colors.white,
-        barCollapsingEnabled: true,
-        entersReaderIfAvailable: false,
-        dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
-      ),
+      safariVCOptions: customTabs.SafariViewControllerOptions(
+          barCollapsingEnabled: true, dismissButtonStyle: customTabs.SafariViewControllerDismissButtonStyle.close, entersReaderIfAvailable: false, preferredControlTintColor: Colors.white, preferredBarTintColor: theme.primaryColor),
     );
   } catch (e) {
     // An exception is thrown if browser app is not installed on Android device.
@@ -291,11 +290,12 @@ Future<void> openWebPage(BuildContext context, {required String url}) async {
 }
 
 void ifNotTester(VoidCallback callback) {
-  if (appStore.loginEmail == DEMO_USER_EMAIL) {
+  callback.call();
+  /* if (appStore.loginEmail == DEMO_USER_EMAIL) {
     toast(language.demoUserText);
   } else {
     callback.call();
-  }
+  } */
 }
 
 Future<List<MediaSourceModel>> getMultipleImages() async {
@@ -428,27 +428,6 @@ String countYears(int difference) {
   int count = (difference / 31536000000).truncate();
   return count.toString() + (count > 1 ? ' ${language.years}' : ' ${language.year}');
 }
-
-/*void initializeOneSignal() async {
-  OneSignal.shared.setAppId(getStringAsync(ONESIGNAL_APP_ID, defaultValue: ONESIGNAL_APP_ID)).then((value) async {
-    OneSignal.shared.setNotificationOpenedHandler((openedResult) {
-      //
-    });
-
-    OneSignal.shared.setNotificationWillShowInForegroundHandler((OSNotificationReceivedEvent event) {
-      event.complete(event.notification);
-    });
-
-    OneSignal.shared.consentGranted(true);
-    OneSignal.shared.promptUserForPushNotificationPermission();
-
-    final status = await OneSignal.shared.getDeviceState();
-
-    log('--------------------------------');
-    log(status?.userId.validate());
-    if (status!.userId.validate().isNotEmpty) setValue(SharePreferencesKey.ONE_SIGNAL_PLAYER_ID, status.userId.validate());
-  });
-}*/
 
 String getPostContent(String? postContent) {
   String content = '';

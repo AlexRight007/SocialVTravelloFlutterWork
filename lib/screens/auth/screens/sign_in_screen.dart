@@ -5,6 +5,7 @@ import 'package:socialv/components/loading_widget.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/screens/auth/components/login_in_component.dart';
 import 'package:socialv/screens/auth/components/sign_up_component.dart';
+import 'package:socialv/utils/push_notification_service.dart';
 
 import '../../../utils/app_constants.dart';
 
@@ -26,6 +27,8 @@ class _SignInScreenState extends State<SignInScreen> {
     super.initState();
     appStore.setLoading(false);
     setStatusBarColorBasedOnTheme();
+
+    PushNotificationService().registerFCMAndTopics();
   }
 
   Widget getFragment() {

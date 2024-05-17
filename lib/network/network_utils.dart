@@ -16,6 +16,8 @@ import 'package:socialv/utils/common.dart';
 import 'package:socialv/utils/constants.dart';
 import 'package:socialv/utils/woo_commerce/query_string.dart';
 
+import '../models/api_responses.dart';
+
 Map<String, String> buildHeaderTokens({required bool requiredNonce, required bool requiredToken}) {
   Map<String, String> header = {
     HttpHeaders.cacheControlHeader: 'no-cache',
@@ -146,21 +148,28 @@ Future<Response> buildHttpResponse(
     );
 
     if (appStore.isLoggedIn && response.statusCode == 401 && !endPoint.startsWith('http')) {
-      return await reGenerateToken().then((value) async {
-        return await buildHttpResponse(
-          endPoint,
-          method: method,
-          request: request,
-          requiredNonce: requiredNonce,
-          isAuth: isAuth,
-          passHeaders: passHeaders,
-          passParameters: passParameters,
-          passToken: passToken,
-          requestList: requestList,
-        );
-      }).catchError((e) {
-        throw errorSomethingWentWrong;
-      });
+      ApiResponses res = ApiResponses.fromJson(jsonDecode(response.body));
+      if (!res.code.validate().contains('wocommerce_rest') && !res.code.validate().contains('woocommerce_rest'))
+      {
+        return await reGenerateToken().then((value) async {
+          return await buildHttpResponse(
+            endPoint,
+            method: method,
+            request: request,
+            requiredNonce: requiredNonce,
+            isAuth: isAuth,
+            passHeaders: passHeaders,
+            passParameters: passParameters,
+            passToken: passToken,
+            requestList: requestList,
+          );
+        }).catchError((e) {
+          throw errorSomethingWentWrong;
+        });
+      }
+      else {
+        return response;
+      }
     } else {
       return response;
     }
@@ -239,6 +248,18 @@ Future<void> sendMultiPartRequest(MultipartRequest multiPartRequest, {Function(d
   } else {
     onError?.call(errorSomethingWentWrong);
   }
+
+  apiPrint(
+    url: multiPartRequest.url.toString(),
+    headers: jsonEncode(multiPartRequest.headers),
+    request: jsonEncode(multiPartRequest.fields),
+    hasRequest: true,
+    statusCode: response.statusCode,
+    responseBody: response.body,
+    methodtype: "MultiPart",
+  );
+
+
 }
 
 enum HttpMethod { GET, POST, DELETE, PUT }

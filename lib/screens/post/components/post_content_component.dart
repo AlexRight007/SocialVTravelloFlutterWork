@@ -1,5 +1,6 @@
 import 'package:any_link_preview/any_link_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/models/common_models/content.dart';
@@ -52,8 +53,9 @@ class _PostContentComponentState extends State<PostContentComponent> {
           if (e.isLink.validate()) {
             return AnyLinkPreview(link: parseHtmlString(e.content.validate())).paddingSymmetric(vertical: 4);
           } else if (e.content.validate().validate().contains('is_mention=1')) {
-            return HtmlWidget(postContent: e.content.validate());
+            return HtmlWidget(postContent: e.content.validateAndFilter());
           } else {
+
             return Text(e.content.validate().nonBreaking, style: primaryTextStyle());
           }
         }).toList(),

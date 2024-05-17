@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/models/dashboard_api_response.dart';
 import 'package:socialv/models/pmp_models/membership_model.dart';
@@ -13,18 +12,16 @@ import 'package:socialv/screens/fragments/home_fragment.dart';
 import 'package:socialv/screens/fragments/notification_fragment.dart';
 import 'package:socialv/screens/fragments/profile_fragment.dart';
 import 'package:socialv/screens/fragments/search_fragment.dart';
-import 'package:socialv/screens/groups/screens/group_detail_screen.dart';
+import 'package:socialv/screens/fragments/toursearch_fragment.dart';
 import 'package:socialv/screens/home/components/user_detail_bottomsheet_widget.dart';
 import 'package:socialv/screens/membership/screens/membership_plans_screen.dart';
 import 'package:socialv/screens/messages/functions.dart';
 import 'package:socialv/screens/notification/components/latest_activity_component.dart';
 import 'package:socialv/screens/post/screens/add_post_screen.dart';
-import 'package:socialv/screens/post/screens/comment_screen.dart';
-import 'package:socialv/screens/post/screens/single_post_screen.dart';
-import 'package:socialv/screens/profile/screens/member_profile_screen.dart';
 import 'package:socialv/screens/shop/screens/shop_screen.dart';
 import 'package:socialv/utils/app_constants.dart';
 import 'package:socialv/utils/cached_network_image.dart';
+import 'package:socialv/utils/push_notification_service.dart';
 
 import '../utils/chat_reaction_list.dart';
 import 'messages/screens/message_screen.dart';
@@ -42,7 +39,8 @@ List<VisibilityOptions>? accountPrivacyVisibility;
 List<ReportType>? reportTypes;
 List<ReactionsModel> reactions = [];
 
-class _DashboardScreenState extends State<DashboardScreen> with TickerProviderStateMixin {
+class _DashboardScreenState extends State<DashboardScreen>
+    with TickerProviderStateMixin {
   bool hasUpdate = false;
   late AnimationController _animationController;
 
@@ -61,62 +59,22 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
     _animationController.drive(CurveTween(curve: Curves.easeOutQuad));
 
     super.initState();
-    tabController = TabController(length: 5, vsync: this);
+    tabController = TabController(length: 6, vsync: this);
     getChatEmojiList();
+    PushNotificationService().registerFCMAndTopics();
 
     init();
   }
 
-
-
   Future<void> init() async {
     appFragments.addAll([
       HomeFragment(controller: _controller),
+      TourSearchFragment(controller: _controller),
       SearchFragment(controller: _controller),
       ForumsFragment(controller: _controller),
       NotificationFragment(controller: _controller),
       ProfileFragment(controller: _controller),
     ]);
-
-    afterBuildCreated(() {
-      if (isMobile) {
-        ///Handle Navigation
-        OneSignal.Notifications.addClickListener((event) {
-          try {
-            if (event.notification.additionalData != null) {
-              event.notification.additionalData!.entries.forEach((element) {
-                if (element.key == "is_comment") {
-                  int postId = event.notification.additionalData!.entries.firstWhere((element) => element.key == 'post_id').value;
-                  if (postId != 0) {
-                    CommentScreen(postId: postId).launch(context);
-                  }
-                } else if (element.key == 'post_id') {
-                  if (element.value.toString().toInt() != 0) {
-                    SinglePostScreen(postId: element.value.toString().toInt()).launch(context);
-                  }
-                } else if (element.key == 'user_id') {
-                  MemberProfileScreen(memberId: element.value).launch(context);
-                } else if (element.key == 'group_id') {
-                  if (pmpStore.viewSingleGroup) {
-                    GroupDetailScreen(groupId: element.value).launch(context);
-                  } else {
-                    MembershipPlansScreen().launch(context);
-                  }
-                } else if (element.key == 'thread_id') {
-                  if (pmpStore.privateMessaging) {
-                    MessageScreen().launch(context);
-                  } else {
-                    MembershipPlansScreen().launch(context);
-                  }
-                }
-              });
-            }
-          } catch (e) {
-            log('addClickListener E: $e');
-          }
-        });
-      }
-    });
 
     await getReactionsList();
     defaultReactionsList();
@@ -130,7 +88,10 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
 
     getDetails();
 
-    Map req = {"player_id": getStringAsync(SharePreferencesKey.ONE_SIGNAL_PLAYER_ID), "add": 1};
+    Map req = {
+      "firebase_token": getStringAsync(SharePreferencesKey.firebaseToken),
+      "add": 1
+    };
 
     await setPlayerId(req).then((value) {
       //
@@ -180,8 +141,10 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
       appStore.setLMSEnable(value.isLMSEnable.validate());
       appStore.setCourseEnable(value.isCourseEnable.validate());
       appStore.setDisplayPostCount(value.displayPostCount.validate());
-      appStore.setDisplayPostCommentsCount(value.displayPostCommentsCount.validate());
-      appStore.setDisplayFriendRequestBtn(value.displayFriendRequestBtn.validate());
+      appStore.setDisplayPostCommentsCount(
+          value.displayPostCommentsCount.validate());
+      appStore
+          .setDisplayFriendRequestBtn(value.displayFriendRequestBtn.validate());
       appStore.setShopEnable(value.isShopEnable.validate());
       appStore.setIOSGiphyKey(parseHtmlString(value.iosGiphyKey.validate()));
       appStore.setGamiPressEnable(value.isGamipressEnable.validate() == 1);
@@ -217,7 +180,8 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
   }
 
   Future<void> getUsersLevel() async {
-    await getMembershipLevelForUser(userId: appStore.loginUserId.toInt()).then((value) {
+    await getMembershipLevelForUser(userId: appStore.loginUserId.toInt())
+        .then((value) {
       String? levelId;
       if (value != null) {
         MembershipModel membership = MembershipModel.fromJson(value);
@@ -265,10 +229,12 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
             LiveStream().emit(GetUserStories);
             LiveStream().emit(OnAddPost);
           } else if (tabController.index == 2) {
-            LiveStream().emit(RefreshForumsFragment);
+            // LiveStream().emit(RefreshForumsFragment);
           } else if (tabController.index == 3) {
-            LiveStream().emit(RefreshNotifications);
+            LiveStream().emit(RefreshForumsFragment);
           } else if (tabController.index == 4) {
+            LiveStream().emit(RefreshNotifications);
+          } else if (tabController.index == 5) {
             LiveStream().emit(OnAddPostProfile);
           }
 
@@ -294,7 +260,11 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                     children: [
                       Image.asset(APP_ICON, width: 26),
                       4.width,
-                      Text(APP_NAME, style: boldTextStyle(color: context.primaryColor, size: 24, fontFamily: fontFamily)),
+                      Text(APP_NAME,
+                          style: boldTextStyle(
+                              color: context.primaryColor,
+                              size: 24,
+                              fontFamily: fontFamily)),
                     ],
                   ),
                   actions: [
@@ -310,12 +280,24 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                       },
                       highlightColor: Colors.transparent,
                       splashColor: Colors.transparent,
-                      icon: Image.asset(ic_plus, height: 22, width: 22, fit: BoxFit.fitWidth, color: context.iconColor),
+                      icon: Image.asset(ic_plus,
+                          height: 22,
+                          width: 22,
+                          fit: BoxFit.fitWidth,
+                          color: context.iconColor),
                     ),
                     if (appStore.showShop)
-                      Image.asset(ic_bag, height: 24, width: 24, fit: BoxFit.fitWidth, color: context.iconColor).onTap(() {
+                      Image.asset(ic_bag,
+                              height: 24,
+                              width: 24,
+                              fit: BoxFit.fitWidth,
+                              color: context.iconColor)
+                          .onTap(() {
                         ShopScreen().launch(context);
-                      }, splashColor: Colors.transparent, highlightColor: Colors.transparent).paddingSymmetric(horizontal: 8),
+                      },
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors
+                                  .transparent).paddingSymmetric(horizontal: 8),
                     Observer(
                       builder: (_) => IconButton(
                         highlightColor: Colors.transparent,
@@ -337,14 +319,19 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                                       width: 45,
                                       height: 5,
                                       //clipBehavior: Clip.hardEdge,
-                                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: Colors.white),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                          color: Colors.white),
                                     ),
                                     8.height,
                                     Container(
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
                                       decoration: BoxDecoration(
                                         color: context.cardColor,
-                                        borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(16),
+                                            topRight: Radius.circular(16)),
                                       ),
                                       child: UserDetailBottomSheetWidget(
                                         callback: () {
@@ -359,7 +346,9 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                             },
                           );
                         },
-                        icon: cachedImage(appStore.loginAvatarUrl, height: 30, width: 30, fit: BoxFit.cover).cornerRadiusWithClipRRect(15),
+                        icon: cachedImage(appStore.loginAvatarUrl,
+                                height: 30, width: 30, fit: BoxFit.cover)
+                            .cornerRadiusWithClipRRect(15),
                       ),
                     ),
                   ],
@@ -372,39 +361,71 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                     },
                     tabs: [
                       Tooltip(
-                        richMessage: TextSpan(text: language.home, style: secondaryTextStyle(color: Colors.white)),
+                        richMessage: TextSpan(
+                            text: language.home,
+                            style: secondaryTextStyle(color: Colors.white)),
                         child: Image.asset(
                           selectedIndex == 0 ? ic_home_selected : ic_home,
                           height: 24,
                           width: 24,
                           fit: BoxFit.cover,
-                          color: selectedIndex == 0 ? context.primaryColor : context.iconColor,
+                          color: selectedIndex == 0
+                              ? context.primaryColor
+                              : context.iconColor,
                         ).paddingSymmetric(vertical: 11),
                       ),
                       Tooltip(
-                        richMessage: TextSpan(text: language.searchHere, style: secondaryTextStyle(color: Colors.white)),
+                        richMessage: TextSpan(
+                            text: language.home,
+                            style: secondaryTextStyle(color: Colors.white)),
                         child: Image.asset(
-                          selectedIndex == 1 ? ic_search_selected : ic_search,
+                          selectedIndex == 1 ? ic_network_selected : ic_network,
                           height: 24,
                           width: 24,
                           fit: BoxFit.cover,
-                          color: selectedIndex == 1 ? context.primaryColor : context.iconColor,
+                          color: selectedIndex == 1
+                              ? context.primaryColor
+                              : context.iconColor,
                         ).paddingSymmetric(vertical: 11),
                       ),
                       Tooltip(
-                        richMessage: TextSpan(text: language.forums, style: secondaryTextStyle(color: Colors.white)),
+                        richMessage: TextSpan(
+                            text: language.searchHere,
+                            style: secondaryTextStyle(color: Colors.white)),
                         child: Image.asset(
-                          selectedIndex == 2 ? ic_three_user_filled : ic_three_user,
+                          selectedIndex == 2 ? ic_search_selected : ic_search,
+                          height: 24,
+                          width: 24,
+                          fit: BoxFit.cover,
+                          color: selectedIndex == 2
+                              ? context.primaryColor
+                              : context.iconColor,
+                        ).paddingSymmetric(vertical: 11),
+                      ),
+                      Tooltip(
+                        richMessage: TextSpan(
+                            text: language.forums,
+                            style: secondaryTextStyle(color: Colors.white)),
+                        child: Image.asset(
+                          selectedIndex == 3
+                              ? ic_three_user_filled
+                              : ic_three_user,
                           height: 28,
                           width: 28,
                           fit: BoxFit.fill,
-                          color: selectedIndex == 2 ? context.primaryColor : context.iconColor,
+                          color: selectedIndex == 3
+                              ? context.primaryColor
+                              : context.iconColor,
                         ).paddingSymmetric(vertical: 9),
                       ),
                       Tooltip(
-                        richMessage: TextSpan(text: language.notifications, style: secondaryTextStyle(color: Colors.white)),
-                        child: selectedIndex == 3
-                            ? Image.asset(ic_notification_selected, height: 24, width: 24, fit: BoxFit.cover).paddingSymmetric(vertical: 11)
+                        richMessage: TextSpan(
+                            text: language.notifications,
+                            style: secondaryTextStyle(color: Colors.white)),
+                        child: selectedIndex == 4
+                            ? Image.asset(ic_notification_selected,
+                                    height: 24, width: 24, fit: BoxFit.cover)
+                                .paddingSymmetric(vertical: 11)
                             : Observer(
                                 builder: (_) => Stack(
                                   clipBehavior: Clip.none,
@@ -419,14 +440,32 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                                     ).paddingSymmetric(vertical: 11),
                                     if (appStore.notificationCount != 0)
                                       Positioned(
-                                        right: appStore.notificationCount.toString().length > 1 ? -6 : -4,
+                                        right: appStore.notificationCount
+                                                    .toString()
+                                                    .length >
+                                                1
+                                            ? -6
+                                            : -4,
                                         top: 3,
                                         child: Container(
-                                          padding: EdgeInsets.all(appStore.notificationCount.toString().length > 1 ? 4 : 6),
-                                          decoration: BoxDecoration(color: appColorPrimary, shape: BoxShape.circle),
+                                          padding: EdgeInsets.all(appStore
+                                                      .notificationCount
+                                                      .toString()
+                                                      .length >
+                                                  1
+                                              ? 4
+                                              : 6),
+                                          decoration: BoxDecoration(
+                                              color: appColorPrimary,
+                                              shape: BoxShape.circle),
                                           child: Text(
-                                            appStore.notificationCount.toString(),
-                                            style: boldTextStyle(color: Colors.white, size: 10, weight: FontWeight.w700, letterSpacing: 0.7),
+                                            appStore.notificationCount
+                                                .toString(),
+                                            style: boldTextStyle(
+                                                color: Colors.white,
+                                                size: 10,
+                                                weight: FontWeight.w700,
+                                                letterSpacing: 0.7),
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -442,11 +481,13 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                               color: Colors.white,
                             )),
                         child: Image.asset(
-                          selectedIndex == 4 ? ic_profile_filled : ic_profile,
+                          selectedIndex == 5 ? ic_profile_filled : ic_profile,
                           height: 24,
                           width: 24,
                           fit: BoxFit.cover,
-                          color: selectedIndex == 4 ? context.primaryColor : context.iconColor,
+                          color: selectedIndex == 5
+                              ? context.primaryColor
+                              : context.iconColor,
                         ).paddingSymmetric(vertical: 11),
                       ),
                     ],
@@ -463,7 +504,7 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
               ),
             ],
           ),
-          floatingActionButton: tabController.index == 3
+          floatingActionButton: tabController.index == 4
               ? FloatingActionButton(
                   onPressed: () {
                     showModalBottomSheet(
@@ -481,7 +522,9 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                               Container(
                                 width: 45,
                                 height: 5,
-                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: Colors.white),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: Colors.white),
                               ),
                               8.height,
                               Container(
@@ -489,7 +532,9 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                                 width: context.width(),
                                 decoration: BoxDecoration(
                                   color: context.cardColor,
-                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(16),
+                                      topRight: Radius.circular(16)),
                                 ),
                                 child: LatestActivityComponent(),
                               ).expand(),
@@ -499,7 +544,11 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                       },
                     );
                   },
-                  child: cachedImage(ic_history, width: 26, height: 26, fit: BoxFit.cover, color: Colors.white),
+                  child: cachedImage(ic_history,
+                      width: 26,
+                      height: 26,
+                      fit: BoxFit.cover,
+                      color: Colors.white),
                   backgroundColor: context.primaryColor,
                 )
               : Observer(
@@ -516,19 +565,30 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
                             MembershipPlansScreen().launch(context);
                           }
                         },
-                        child: cachedImage(ic_chat, width: 26, height: 26, fit: BoxFit.cover, color: Colors.white),
+                        child: cachedImage(ic_chat,
+                            width: 26,
+                            height: 26,
+                            fit: BoxFit.cover,
+                            color: Colors.white),
                         backgroundColor: context.primaryColor,
                       ),
                       if (messageStore.messageCount != 0)
                         Positioned(
-                          left: messageStore.messageCount.toString().length > 1 ? -6 : -4,
+                          left: messageStore.messageCount.toString().length > 1
+                              ? -6
+                              : -4,
                           top: -5,
                           child: Container(
                             padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(color: blueTickColor, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: blueTickColor, shape: BoxShape.circle),
                             child: Text(
                               messageStore.messageCount.toString(),
-                              style: boldTextStyle(color: Colors.white, size: 10, weight: FontWeight.w700, letterSpacing: 0.7),
+                              style: boldTextStyle(
+                                  color: Colors.white,
+                                  size: 10,
+                                  weight: FontWeight.w700,
+                                  letterSpacing: 0.7),
                               textAlign: TextAlign.center,
                             ),
                           ),

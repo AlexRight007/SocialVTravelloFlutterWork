@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http_parser/http_parser.dart';
@@ -71,7 +72,9 @@ import 'package:socialv/models/woo_commerce/product_review_model.dart';
 import 'package:socialv/models/woo_commerce/wishlist_model.dart';
 import 'package:socialv/network/network_utils.dart';
 import 'package:socialv/utils/constants.dart';
+import 'package:socialv/utils/push_notification_service.dart';
 
+import '../configs.dart';
 import '../models/gallery/album_media_list_model.dart';
 import '../models/gallery/albums.dart';
 import '../models/gallery/media_active_statuses_model.dart';
@@ -79,6 +82,7 @@ import '../models/invitations/invite_list_model.dart';
 import '../models/reactions/activity_reaction_model.dart';
 import '../models/reactions/reactions_count_model.dart';
 import '../screens/auth/screens/sign_in_screen.dart';
+import '../utils/common.dart';
 
 bool get isTokenExpire => getStringAsync(SharePreferencesKey.TOKEN).isNotEmpty ? JwtDecoder.isExpired(getStringAsync(SharePreferencesKey.TOKEN)) : true;
 
@@ -104,11 +108,11 @@ Future<LoginResponse> loginUser({required Map request, required bool isSocialLog
   appStore.setLoginEmail(response.userEmail.validate());
   appStore.setIsSocialLogin(isSocialLogin);
 
-  Map req = {"player_id": getStringAsync(SharePreferencesKey.ONE_SIGNAL_PLAYER_ID), "add": 1};
+  Map req = {"firebase_token": getStringAsync(SharePreferencesKey.firebaseToken), "add": 1};
   await setPlayerId(req).then((value) {
     //
   }).catchError((e) {
-    log("Player id error : ${e.toString()}");
+    log("firebase token error : ${e.toString()}");
   });
   return response;
 }
@@ -123,9 +127,8 @@ Future<CommonMessageResponse> forgetPassword({required String email}) async {
 
 Future<void> logout(BuildContext context, {bool setId = true}) async {
   appStore.setLoading(true);
-
   if (setId) {
-    Map req = {"player_id": getStringAsync(SharePreferencesKey.ONE_SIGNAL_PLAYER_ID), "add": 0};
+    Map req = {"add": 0,'firebase_token':getStringAsync(SharePreferencesKey.firebaseToken)};
 
     await setPlayerId(req).then((value) {
       appStore.setLoading(false);

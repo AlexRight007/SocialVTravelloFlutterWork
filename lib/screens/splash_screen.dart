@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
       await checkIsAppInReview(value).then((val) {
         if (!getBoolAsync(SharePreferencesKey.HAS_IN_REVIEW)) {
-          pmpStore.setPmpEnable(value.isPaidMembershipEnable.validate());
+          pmpStore.setPmpEnable(value.showMemberShip.validate().getBoolInt());
 
         }
       });

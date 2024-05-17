@@ -16,6 +16,11 @@ const ic_heart_filled = 'assets/icons/ic_heart_filled.png';
 const ic_hide = 'assets/icons/ic_hide.png';
 const ic_home = 'assets/icons/ic_home.png';
 const ic_home_selected = 'assets/icons/ic_home_selected.png';
+const ic_direction = 'assets/icons/ic_direction.png';
+const ic_direction_selected = 'assets/icons/ic_direction_selected.png';
+const ic_hot = 'assets/icons/ic_hot.png';
+const ic_hot_selected = 'assets/icons/ic_hot_selected.png';
+const ic_search_tour = 'assets/icons/ic_search_tour.png';
 const ic_image = 'assets/icons/ic_image.png';
 const ic_location = 'assets/icons/ic_location.png';
 const ic_lock = 'assets/icons/ic_lock.png';
@@ -40,6 +45,7 @@ const ic_voice = 'assets/icons/ic_voice.png';
 const ic_tick_square = 'assets/icons/ic_tick_square.png';
 const ic_language = 'assets/icons/ic_language.png';
 const ic_network = 'assets/icons/ic_network.png';
+const ic_network_selected = 'assets/icons/ic_network_selected.png';
 const ic_delete = 'assets/icons/ic_delete.png';
 const ic_reply = 'assets/icons/ic_reply.png';
 const ic_hyperlink = 'assets/icons/ic_hyperlink.png';
@@ -98,7 +104,7 @@ const ic_game = 'assets/icons/ic_game.png';
 const ic_coin = 'assets/icons/ic_coin.png';
 
 /// images
-const  level_image = 'assets/images/level-up.png';
+const level_image = 'assets/images/level-up.png';
 
 // messages
 const ic_new_chat = 'assets/icons/ic_new_chat.png';

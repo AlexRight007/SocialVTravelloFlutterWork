@@ -9,15 +9,12 @@ const APP_ICON = "assets/app_icon.png";
 /// Splash screen image src
 const SPLASH_SCREEN_IMAGE = 'assets/images/splash_image.png';
 
-/// OneSignal Notification App Id
-const ONESIGNAL_APP_ID = "07823ab7-e2f0-4a73-bce5-b3e26f8841a1";
-const ONESIGNAL_REST_API = 'ZWU4Y2E3NTYtOTNkZC00ZTIxLWJmOTEtYjc0ZTFiNDRiZTg0';
-
 /// NOTE: Do not add slash (/) or (https://) or (http://) at the end of your domain.
-const WEB_SOCKET_DOMAIN = "travello.kz";
+const WEB_SOCKET_DOMAIN = "apps.iqonic.design";
 
 /// NOTE: Do not add slash (/) at the end of your domain.
 const DOMAIN_URL = "https://travello.kz";
+
 const BASE_URL = '$DOMAIN_URL/wp-json/';
 
 /// AppStore Url
@@ -30,7 +27,7 @@ const TERMS_AND_CONDITIONS_URL = '$DOMAIN_URL/terms-condition/';
 const PRIVACY_POLICY_URL = '$DOMAIN_URL/privacy-policy-2/';
 
 /// Support URL
-const SUPPORT_URL = '';
+const SUPPORT_URL = 'https://iqonic.desky.support';
 
 /// AdMod Id
 // Android
@@ -41,7 +38,8 @@ const mAdMobBannerId = '';
 const mAdMobAppIdIOS = '';
 const mAdMobBannerIdIOS = '';
 
-const mTestAdMobBannerId = '';
+//Todo : Always add this test key to manifest file after update
+const mTestAdMobBannerId = 'ca-app-pub-7567158629149653~2821182377';
 
 /// Woo Commerce keys
 
@@ -50,27 +48,27 @@ const CONSUMER_KEY = '';
 const CONSUMER_SECRET = '';
 
 /// STRIPE PAYMENT DETAIL
-const STRIPE_MERCHANT_COUNTRY_CODE = 'RU';
-const STRIPE_CURRENCY_CODE = 'RUS';
+const STRIPE_MERCHANT_COUNTRY_CODE = 'IN';
+const STRIPE_CURRENCY_CODE = 'INR';
 
 /// RAZORPAY PAYMENT DETAIL
-const RAZORPAY_CURRENCY_CODE = 'RUS';
+const RAZORPAY_CURRENCY_CODE = 'INR';
 
 /// AGORA
 const AGORA_APP_ID = '';
 
 Country defaultCountry() {
   return Country(
-    phoneCode: '7',
-    countryCode: 'RU',
-    e164Sc: 7,
+    phoneCode: '91',
+    countryCode: 'IN',
+    e164Sc: 91,
     geographic: true,
     level: 1,
-    name: 'Kazakhstan',
-    example: '7077777777',
-    displayName: 'Kazakhstan (KZ) [+7]',
-    displayNameNoCountryCode: 'Kazakhstan (KZ)',
-    e164Key: '7-KZ-0',
-    fullExampleWithPlusSign: '+77077777777',
+    name: 'India',
+    example: '9123456789',
+    displayName: 'India (IN) [+91]',
+    displayNameNoCountryCode: 'India (IN)',
+    e164Key: '91-IN-0',
+    fullExampleWithPlusSign: '+919123456789',
   );
 }

@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/screens/stories/screen/story_page.dart';
 import 'package:socialv/utils/app_constants.dart';
+import 'package:video_player/video_player.dart' as vc;
 import 'package:visibility_detector/visibility_detector.dart';
 
 class CreateVideoStory extends StatefulWidget {
@@ -18,7 +18,7 @@ class CreateVideoStory extends StatefulWidget {
 }
 
 class _CreateVideoStoryState extends State<CreateVideoStory> {
-  late VideoPlayerController videoPlayerController;
+  late CachedVideoPlayerController videoPlayerController;
   late CustomVideoPlayerController _customVideoPlayerController;
   GlobalKey storyVisibilityKey = GlobalKey();
 
@@ -26,7 +26,7 @@ class _CreateVideoStoryState extends State<CreateVideoStory> {
   void initState() {
     super.initState();
 
-    videoPlayerController = VideoPlayerController.file(widget.videoFile)..initialize().then((value) => setState(() {}));
+    videoPlayerController = CachedVideoPlayerController.file(widget.videoFile)..initialize().then((value) => setState(() {}));
     videoPlayerController.play();
 
     _customVideoPlayerController = CustomVideoPlayerController(
@@ -79,11 +79,11 @@ class CreateVideoThumbnail extends StatefulWidget {
 }
 
 class _CreateVideoThumbnailState extends State<CreateVideoThumbnail> {
-  late VideoPlayerController controller;
+  late vc.VideoPlayerController controller;
 
   @override
   void initState() {
-    controller = VideoPlayerController.file(widget.videoFile!)
+    controller = vc.VideoPlayerController.file(widget.videoFile!)
       ..initialize().then((_) {
         setState(() {});
       });
@@ -98,7 +98,7 @@ class _CreateVideoThumbnailState extends State<CreateVideoThumbnail> {
   @override
   Widget build(BuildContext context) {
     if (controller.value.isInitialized) {
-      return VideoPlayer(controller).cornerRadiusWithClipRRect(defaultAppButtonRadius);
+      return vc.VideoPlayer(controller).cornerRadiusWithClipRRect(defaultAppButtonRadius);
     } else {
       return Container(
         decoration: BoxDecoration(
@@ -124,7 +124,7 @@ class ShowVideoThumbnail extends StatefulWidget {
 class ShowVideoThumbnailState extends State<ShowVideoThumbnail> {
   String videoUrl = '';
 
-  late VideoPlayerController controller;
+  late vc.VideoPlayerController controller;
 
   @override
   void initState() {
@@ -135,7 +135,7 @@ class ShowVideoThumbnailState extends State<ShowVideoThumbnail> {
   }
 
   void init() {
-    controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl!))
+    controller = vc.VideoPlayerController.network(widget.videoUrl.validate())
       ..initialize().then((_) {
         setState(() {});
       });
@@ -159,7 +159,7 @@ class ShowVideoThumbnailState extends State<ShowVideoThumbnail> {
       init();
       videoUrl = widget.videoUrl.validate();
     }
-    return controller.value.isInitialized ? VideoPlayer(controller).cornerRadiusWithClipRRect(24) : Image.asset(ic_video, height: 18, width: 18, fit: BoxFit.cover).paddingAll(8);
+    return controller.value.isInitialized ? vc.VideoPlayer(controller).cornerRadiusWithClipRRect(24) : Image.asset(ic_video, height: 18, width: 18, fit: BoxFit.cover).paddingAll(8);
   }
 }
 
@@ -178,7 +178,7 @@ class StoryVideoPostComponent extends StatefulWidget {
 }
 
 class _StoryVideoPostComponentState extends State<StoryVideoPostComponent> {
-  late VideoPlayerController videoPlayerController;
+  late vc.VideoPlayerController videoPlayerController;
   bool isVideoVisible = true;
 
   @override
@@ -188,8 +188,8 @@ class _StoryVideoPostComponentState extends State<StoryVideoPostComponent> {
   }
 
   void init() async {
-    videoPlayerController = VideoPlayerController.networkUrl(
-      Uri.parse(widget.videoURl),
+    videoPlayerController = vc.VideoPlayerController.network(
+      widget.videoURl,
       videoPlayerOptions: VideoPlayerOptions(mixWithOthers: false, allowBackgroundPlayback: true),
     );
 
@@ -242,8 +242,9 @@ class _StoryVideoPostComponentState extends State<StoryVideoPostComponent> {
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
-              VideoPlayer(videoPlayerController),
-              VideoProgressIndicator(videoPlayerController, allowScrubbing: true),
+              vc.VideoPlayer(videoPlayerController),
+
+              vc.VideoProgressIndicator(videoPlayerController, allowScrubbing: true),
             ],
           ),
         ),

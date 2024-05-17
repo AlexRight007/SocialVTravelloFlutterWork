@@ -18,6 +18,7 @@ import 'package:socialv/screens/post/components/edit_post_media_component.dart';
 import 'package:flutter_mentions/flutter_mentions.dart';
 import 'package:socialv/screens/post/components/show_selected_media_component.dart';
 import 'package:socialv/screens/post/screens/post_in_groups_screen.dart';
+import 'package:video_player/video_player.dart';
 import '../../../utils/app_constants.dart';
 import '../../../utils/cached_network_image.dart';
 
@@ -377,9 +378,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       (index) {
                         PostMedia media = mediaList[index];
                         if (media.isLink)
-                          return VideoPlayerController.networkUrl(Uri.parse(mediaList[index].link.validate()));
+                          return VideoPlayerController.network(mediaList[index].link.validate());
                         else
-                          return VideoPlayerController.networkUrl(Uri.parse(mediaList[index].file!.path.validate()));
+                          return VideoPlayerController.file(mediaList[index].file!);
                       },
                     ),
                   ),

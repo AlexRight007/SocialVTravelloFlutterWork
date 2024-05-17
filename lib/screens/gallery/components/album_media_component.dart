@@ -1,4 +1,3 @@
-import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/main.dart';
@@ -8,6 +7,7 @@ import 'package:socialv/screens/post/screens/pdf_screen.dart';
 import 'package:socialv/screens/post/screens/video_post_screen.dart';
 import 'package:socialv/utils/app_constants.dart';
 import 'package:socialv/utils/cached_network_image.dart';
+import 'package:video_player/video_player.dart';
 
 
 class AlbumMediaComponent extends StatefulWidget {

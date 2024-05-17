@@ -53,10 +53,11 @@ class _SignUpComponentState extends State<SignUpComponent> {
     if (signupFormKey.currentState!.validate()) {
       signupFormKey.currentState!.save();
       hideKeyboard(context);
+      appStore.setLoading(true);
 
       if (group.fields.validate().any((element) => element.value.validate().isNotEmpty)) {
         if (isDetailChange) {
-          appStore.setLoading(true);
+
 
           Map request = {
             "user_login": userNameCont.text.validate(),

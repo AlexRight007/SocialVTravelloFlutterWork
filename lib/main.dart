@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -19,7 +20,15 @@ import 'package:socialv/store/lms_store.dart';
 import 'package:socialv/store/message_store.dart';
 import 'package:socialv/store/pmp_store.dart';
 import 'package:socialv/utils/app_constants.dart';
-import 'package:socialv/utils/one_signal_utils.dart';
+import 'package:socialv/utils/push_notification_service.dart';
+
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  log('${FirebaseMsgConst.notificationDataKey} : ${message.data}');
+  log('${FirebaseMsgConst.notificationKey} : ${message.notification}');
+  log('${FirebaseMsgConst.notificationTitleKey} : ${message.notification!.title}');
+  log('${FirebaseMsgConst.notificationBodyKey} : ${message.notification!.body}');
+}
 
 AppStore appStore = AppStore();
 LmsStore lmsStore = LmsStore();
@@ -37,15 +46,13 @@ String currentPackageName = '';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await initialize(aLocaleLanguageList: languageList());
-
   await Firebase.initializeApp().then((value) {
-    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+    PushNotificationService().setupFirebaseMessaging();
     MobileAds.instance.initialize();
-    initOneSignal();
-  }).catchError((e) {
-    log('Error: ${e.toString()}');
-  });
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  }).catchError(onError);
+
+  await initialize(aLocaleLanguageList: languageList());
 
   defaultRadius = 32.0;
   defaultAppButtonRadius = 12;

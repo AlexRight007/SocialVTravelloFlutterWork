@@ -3,8 +3,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/main.dart';
 
 /// DO NOT CHANGE THIS Keys
-// const APP_PACKAGE_NAME = "com.iconic.socialv";
-const APP_PACKAGE_NAME = "kz.infoservice.socialv";
+const APP_PACKAGE_NAME = "com.iconic.socialv";
 const WEB_SOCKET_URL =
     "wss://realtime-cloud.bpbettermessages.com/socket.io/?EIO=4&transport=websocket";
 
@@ -59,8 +58,8 @@ const AbortFastMessage = 'AbortFastMessage';
 //endregion
 
 /// Demo Login
-const DEMO_USER_EMAIL = "";
-const DEMO_USER_PASSWORD = "";
+const DEMO_USER_EMAIL = "jerry@gmail.com";
+const DEMO_USER_PASSWORD = "123456";
 
 class Constants {
   static const defaultLanguage = 'ru';
@@ -114,6 +113,8 @@ class SharePreferencesKey {
   static const String showMemberShip = "Show MemberShip";
 
   static const String showForums = "Show Forums";
+
+  static const String firebaseToken = 'Firebase Token';
 }
 
 //region LOGIN TYPE
@@ -378,6 +379,52 @@ class StoryType {
 class GroupImageKeys {
   static const coverActionKey = 'bp_cover_image_upload';
   static const avatarActionKey = 'bp_avatar_upload';
+}
+
+class FirebaseMsgConst {
+  //region Firebase Notification
+  static const additionalDataKey = 'additional_data';
+  static const notificationGroupKey = 'notification_group';
+  static const idKey = 'id';
+  static const userWithUnderscoreKey = 'user_';
+  static const notificationDataKey = 'Notification Data';
+  static const fcmNotificationTokenKey = 'FCM Notification Token';
+  static const apnsNotificationTokenKey = 'APNS Notification Token';
+  static const notificationErrorKey = 'Notification Error';
+  static const notificationTitleKey = 'Notification Title';
+
+  static const notificationKey = 'Notification';
+
+  static const onClickListener = "Error On Notification Click Listener";
+  static const onMessageListen = "Error On Message Listen";
+  static const onMessageOpened = "Error On Message Opened App";
+  static const onGetInitialMessage = 'Error On Get Initial Message';
+
+  static const messageDataCollapseKey = 'MessageData Collapse Key';
+
+  static const messageDataMessageIdKey = 'MessageData Message Id';
+
+  static const messageDataMessageTypeKey = 'MessageData Type';
+  static const notificationBodyKey = 'Notification Body';
+  static const backgroundChannelIdKey = 'background_channel';
+  static const backgroundChannelNameKey = 'background_channel';
+
+  static const notificationChannelIdKey = 'notification';
+  static const notificationChannelNameKey = 'Notification';
+
+  static const topicSubscribed = 'topic-----subscribed---->';
+
+  static const topicUnSubscribed = 'topic-----Unsubscribed---->';
+  //endregion
+
+  //region Notification element keys
+  static const isCommentKey = 'is_comment';
+  static const postIdKey = 'post_id';
+  static const userIdKey = 'user_id';
+  static const groupIdKey = 'group_id';
+  static const threadId = 'thread_id';
+
+//endregion
 }
 
 class NotificationAction {
@@ -660,4 +707,50 @@ class PaymentIds {
 class BetterMessageCallType {
   static String audio = 'audio';
   static String video = 'video';
+}
+
+// ! Routing
+int currentIndex = 0;
+// ! Routing
+
+int globalSelectedCityFrom = 60;
+int globalSelectedCityTo = 9;
+int globalAdultsCount = 2;
+int globalChildrenCount = 0;
+DateTime globalDepartureDateFrom = DateTime.now().add(const Duration(days: 1));
+DateTime globalDepartureDateTo =
+    globalDepartureDateFrom.add(const Duration(days: 10));
+double globalNightsFrom = 6;
+double globalNightsTo = 14;
+int globalMealType = 0;
+int globalRatingType = 0;
+int globalMinBudget = 0;
+int globalMaxBudget = 0;
+Set<int> globalHotelTypes = {};
+Set<int> globalHotelLists = {};
+
+class ConstanceData {
+  static String bseImageUrl = 'assets/images/';
+  static String logo = bseImageUrl + "logo.png";
+}
+
+String insertSpaceEveryNCharacters(String inputString, int n) {
+  if (inputString == null || n <= 0) {
+    return inputString;
+  }
+
+  StringBuffer result = StringBuffer();
+  int count = 0;
+
+  for (int i = inputString.length - 1; i >= 0; i--) {
+    result.write(inputString[i]);
+    count++;
+
+    if (count == n && i > 0) {
+      result.write(' ');
+      count = 0;
+    }
+  }
+
+  return result.toString().split('').reversed.join();
 }

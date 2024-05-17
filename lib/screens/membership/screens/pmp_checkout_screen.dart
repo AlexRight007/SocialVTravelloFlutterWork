@@ -10,7 +10,7 @@ import 'package:socialv/network/pmp_repositry.dart';
 import 'package:socialv/screens/membership/components/plan_subtitle_component.dart';
 import 'package:socialv/screens/membership/screens/discount_codes_screen.dart';
 import 'package:socialv/screens/membership/screens/pmp_order_detail_screen.dart';
-import 'package:socialv/services/razor_pay_services.dart';
+// import 'package:socialv/services/razor_pay_services.dart';
 import 'package:socialv/services/stripe_services.dart';
 
 import '../../../utils/app_constants.dart';
@@ -72,21 +72,30 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
               width: context.width(),
               color: context.cardColor,
               padding: EdgeInsets.all(16),
-              child: Text(language.membershipPlan, style: boldTextStyle(color: context.primaryColor)),
+              child: Text(language.membershipPlan,
+                  style: boldTextStyle(color: context.primaryColor)),
             ),
             TextButton(
               onPressed: () {
                 finish(context);
               },
-              child: Text(language.changePlan, style: primaryTextStyle(color: context.primaryColor)),
+              child: Text(language.changePlan,
+                  style: primaryTextStyle(color: context.primaryColor)),
             ).paddingSymmetric(horizontal: 8),
             RichText(
               textAlign: TextAlign.start,
               text: TextSpan(
                 children: [
-                  TextSpan(text: language.youHaveSelectedThe, style: secondaryTextStyle(fontFamily: fontFamily)),
-                  TextSpan(text: ' ${widget.selectedPlan.name}', style: boldTextStyle(fontFamily: fontFamily, size: 14)),
-                  TextSpan(text: ' ${language.membershipPlan.toString().toLowerCase()}.', style: secondaryTextStyle(fontFamily: fontFamily)),
+                  TextSpan(
+                      text: language.youHaveSelectedThe,
+                      style: secondaryTextStyle(fontFamily: fontFamily)),
+                  TextSpan(
+                      text: ' ${widget.selectedPlan.name}',
+                      style: boldTextStyle(fontFamily: fontFamily, size: 14)),
+                  TextSpan(
+                      text:
+                          ' ${language.membershipPlan.toString().toLowerCase()}.',
+                      style: secondaryTextStyle(fontFamily: fontFamily)),
                 ],
               ),
             ).paddingSymmetric(horizontal: 16),
@@ -99,9 +108,12 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                   Align(
                     alignment: Alignment.topRight,
                     child: IconButton(
-                      icon: Icon(Icons.cancel_outlined, color: appStore.isDarkMode ? bodyDark : bodyWhite, size: 20),
+                      icon: Icon(Icons.cancel_outlined,
+                          color: appStore.isDarkMode ? bodyDark : bodyWhite,
+                          size: 20),
                       onPressed: () {
-                        if (discountCode == null || discountCode.validate().isEmpty) {
+                        if (discountCode == null ||
+                            discountCode.validate().isEmpty) {
                           showAddDiscount = false;
                           setState(() {});
                         } else {
@@ -137,7 +149,8 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                           decoration: inputDecorationFilled(
                             context,
                             label: language.couponCode,
-                            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 8),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 8),
                             fillColor: context.cardColor,
                           ),
                           onSubmitted: (text) async {
@@ -152,7 +165,9 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                         ),
                       ),
                       TextButton(
-                        child: Text(language.applyCoupon, style: primaryTextStyle(color: context.primaryColor)),
+                        child: Text(language.applyCoupon,
+                            style:
+                                primaryTextStyle(color: context.primaryColor)),
                         onPressed: () async {
                           onApplyDiscount();
                         },
@@ -182,8 +197,11 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   8.height,
-                  if (discountCode != null || discountCode.validate().isNotEmpty)
-                    Text('${language.theDiscount} "$discountCode" ${language.codeHasBeenApplied}', style: secondaryTextStyle()).paddingSymmetric(horizontal: 16),
+                  if (discountCode != null ||
+                      discountCode.validate().isNotEmpty)
+                    Text('${language.theDiscount} "$discountCode" ${language.codeHasBeenApplied}',
+                            style: secondaryTextStyle())
+                        .paddingSymmetric(horizontal: 16),
                   TextButton(
                     onPressed: () {
                       showAddDiscount = true;
@@ -191,7 +209,8 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                     },
                     child: Text(
                         '${language.clickHereTo} ${discountCode != null && discountCode.validate().isNotEmpty ? language.change.toLowerCase() : language.add.toLowerCase()} ${language.yourDiscountCode}',
-                        style: secondaryTextStyle(decoration: TextDecoration.underline)),
+                        style: secondaryTextStyle(
+                            decoration: TextDecoration.underline)),
                   ).paddingSymmetric(horizontal: 8),
                 ],
               ),
@@ -200,7 +219,8 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
               color: context.cardColor,
               margin: EdgeInsets.symmetric(vertical: 8),
               padding: EdgeInsets.all(16),
-              child: Text(language.paymentMethod, style: boldTextStyle(color: context.primaryColor)),
+              child: Text(language.paymentMethod,
+                  style: boldTextStyle(color: context.primaryColor)),
             ),
             SnapHelperWidget<List<PaymentGatewayModel>>(
               future: paymentsList(),
@@ -224,7 +244,8 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                         highlightColor: Colors.transparent,
                         child: Container(
                           padding: EdgeInsets.all(16),
-                          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                          margin:
+                              EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: selectedIndex == index
@@ -234,13 +255,17 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                                       : bodyWhite,
                               width: 1,
                             ),
-                            color: selectedIndex == index ? context.primaryColor.withAlpha(30) : context.cardColor,
+                            color: selectedIndex == index
+                                ? context.primaryColor.withAlpha(30)
+                                : context.cardColor,
                             borderRadius: radius(commonRadius),
                           ),
                           child: Row(
                             children: [
                               Icon(
-                                selectedIndex == index ? Icons.radio_button_checked : Icons.circle_outlined,
+                                selectedIndex == index
+                                    ? Icons.radio_button_checked
+                                    : Icons.circle_outlined,
                                 color: selectedIndex == index
                                     ? context.primaryColor
                                     : appStore.isDarkMode
@@ -249,7 +274,8 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                                 size: 20,
                               ),
                               16.width,
-                              Text(temp.name.validate(), style: primaryTextStyle()),
+                              Text(temp.name.validate(),
+                                  style: primaryTextStyle()),
                             ],
                           ),
                         ),
@@ -276,7 +302,9 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
           ? appButton(
               text: language.makePayment,
               onTap: () {
-                int amount = plan!.isInitial.validate() ? plan!.initialPayment.validate() : plan!.billingAmount.validate();
+                int amount = plan!.isInitial.validate()
+                    ? plan!.initialPayment.validate()
+                    : plan!.billingAmount.validate();
 
                 if (amount != 0) {
                   ifNotTester(() async {
@@ -284,10 +312,19 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                       await stripeServices.init(
                         discountCode: discountCode,
                         context: context,
-                        stripePaymentPublishKey: payment!.mode.validate() == 'testing' ? payment!.testing!.publicKey.validate() : payment!.live!.publicKey.validate(),
-                        totalAmount: plan!.isInitial.validate() ? plan!.initialPayment.validate() : plan!.billingAmount.validate(),
-                        stripeURL: payment!.mode.validate() == 'testing' ? payment!.testing!.url.validate() : payment!.live!.url.validate(),
-                        stripePaymentKey: payment!.mode.validate() == 'testing' ? payment!.testing!.key.validate() : payment!.live!.key.validate(),
+                        stripePaymentPublishKey:
+                            payment!.mode.validate() == 'testing'
+                                ? payment!.testing!.publicKey.validate()
+                                : payment!.live!.publicKey.validate(),
+                        totalAmount: plan!.isInitial.validate()
+                            ? plan!.initialPayment.validate()
+                            : plan!.billingAmount.validate(),
+                        stripeURL: payment!.mode.validate() == 'testing'
+                            ? payment!.testing!.url.validate()
+                            : payment!.live!.url.validate(),
+                        stripePaymentKey: payment!.mode.validate() == 'testing'
+                            ? payment!.testing!.key.validate()
+                            : payment!.live!.key.validate(),
                         levelId: widget.selectedPlan.id.validate(),
                         mode: payment!.mode.validate(),
                       );
@@ -296,19 +333,19 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                     } else if (payment!.id.validate() == PaymentIds.razorpay) {
                       appStore.setLoading(true);
 
-                      RazorPayServices.init(
-                        disCode: discountCode,
-                        razorKey: payment!.mode.validate() == 'testing' ? payment!.testing!.publicKey.validate() : payment!.live!.publicKey.validate(),
-                        amount: plan!.isInitial.validate() ? plan!.initialPayment.validate() : plan!.billingAmount.validate(),
-                        planId: widget.selectedPlan.id.validate(),
-                        ctx: context,
-                        paymentMode: payment!.mode.validate(),
-                        url: payment!.mode.validate() == 'testing' ? payment!.testing!.url.validate() : payment!.live!.url.validate(),
-                        secret: payment!.mode.validate() == 'testing' ? payment!.testing!.key.validate() : payment!.live!.key.validate(),
-                      );
-                      await 1.seconds.delay;
-                      appStore.setLoading(false);
-                      RazorPayServices.razorPayCheckout(plan!.isInitial.validate() ? plan!.initialPayment.validate() : plan!.billingAmount.validate());
+                      // RazorPayServices.init(
+                      //   disCode: discountCode,
+                      //   razorKey: payment!.mode.validate() == 'testing' ? payment!.testing!.publicKey.validate() : payment!.live!.publicKey.validate(),
+                      //   amount: plan!.isInitial.validate() ? plan!.initialPayment.validate() : plan!.billingAmount.validate(),
+                      //   planId: widget.selectedPlan.id.validate(),
+                      //   ctx: context,
+                      //   paymentMode: payment!.mode.validate(),
+                      //   url: payment!.mode.validate() == 'testing' ? payment!.testing!.url.validate() : payment!.live!.url.validate(),
+                      //   secret: payment!.mode.validate() == 'testing' ? payment!.testing!.key.validate() : payment!.live!.key.validate(),
+                      // );
+                      // await 1.seconds.delay;
+                      // appStore.setLoading(false);
+                      // RazorPayServices.razorPayCheckout(plan!.isInitial.validate() ? plan!.initialPayment.validate() : plan!.billingAmount.validate());
                     } else {
                       //
                     }
@@ -327,18 +364,26 @@ class _PmpCheckoutScreenState extends State<PmpCheckoutScreen> {
                     "level_id": widget.selectedPlan.id.validate(),
                     "discount_code": discountCode,
                     "gateway_mode": payment!.mode.validate(),
-                    "coupon_amount": plan!.isInitial.validate() ? plan!.initialPayment.validate() : plan!.billingAmount.validate(),
+                    "coupon_amount": plan!.isInitial.validate()
+                        ? plan!.initialPayment.validate()
+                        : plan!.billingAmount.validate(),
                   };
 
                   appStore.setLoading(true);
                   generateOrder(request).then((order) async {
-                    await getMembershipLevelForUser(userId: appStore.loginUserId.validate().toInt()).then((value) {
+                    await getMembershipLevelForUser(
+                            userId: appStore.loginUserId.validate().toInt())
+                        .then((value) {
                       if (value != null) {
-                        pmpStore.setPmpMembership(widget.selectedPlan.id.validate());
-                        setRestrictions(levelId: widget.selectedPlan.id.validate());
+                        pmpStore.setPmpMembership(
+                            widget.selectedPlan.id.validate());
+                        setRestrictions(
+                            levelId: widget.selectedPlan.id.validate());
 
                         appStore.setLoading(false);
-                        PmpOrderDetailScreen(isFromCheckOutScreen: true, orderDetail: order).launch(context);
+                        PmpOrderDetailScreen(
+                                isFromCheckOutScreen: true, orderDetail: order)
+                            .launch(context);
                       }
                     }).catchError((e) {
                       appStore.setLoading(false);

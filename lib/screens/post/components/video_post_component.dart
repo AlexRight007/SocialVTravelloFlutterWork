@@ -1,6 +1,8 @@
 import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:video_player/video_player.dart' as vc;
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../../../utils/app_constants.dart';
@@ -15,7 +17,7 @@ class VideoPostComponent extends StatefulWidget {
 }
 
 class _VideoPostComponentState extends State<VideoPostComponent> {
-  late VideoPlayerController videoPlayerController;
+  late CachedVideoPlayerController videoPlayerController;
   late CustomVideoPlayerController _customVideoPlayerController;
   GlobalKey visibilityKey = GlobalKey();
   bool isVisible = false;
@@ -28,7 +30,7 @@ class _VideoPostComponentState extends State<VideoPostComponent> {
   }
 
   void init() {
-    videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(widget.videoURl))..initialize().then((value) => setState(() {}));
+    videoPlayerController = CachedVideoPlayerController.network(widget.videoURl)..initialize().then((value) => setState(() {}));
     _customVideoPlayerController = CustomVideoPlayerController(
       context: context,
       videoPlayerController: videoPlayerController,
@@ -39,6 +41,7 @@ class _VideoPostComponentState extends State<VideoPostComponent> {
         pauseButton: Image.asset(ic_pause, color: Colors.white, width: 16, height: 16).paddingAll(4),
         playbackSpeedButtonAvailable: false,
         settingsButtonAvailable: false,
+        systemUIModeInsideFullscreen: SystemUiMode.edgeToEdge
       ),
     );
 
@@ -75,7 +78,7 @@ class _VideoPostComponentState extends State<VideoPostComponent> {
           child: VisibilityDetector(
               key: visibilityKey,
               onVisibilityChanged: (info) {
-                _customVideoPlayerController.videoPlayerController.pause();
+               // _customVideoPlayerController.videoPlayerController.pause();
               },
               child: CustomVideoPlayer(customVideoPlayerController: _customVideoPlayerController)),
         ).center(),

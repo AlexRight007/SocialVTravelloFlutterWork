@@ -104,7 +104,7 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
             blurRadius: 16,
           ),
         ],
-        color: context.primaryColor,
+        color: context.accentColor,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -159,7 +159,9 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
               ),
             if (_showAdditionalSettings)
               DropdownButtonFormField<int>(
+                iconEnabledColor: Colors.white,
                 value: globalMealType,
+                dropdownColor: context.primaryColor,
                 onChanged: (int? newValue) {
                   setState(() {
                     globalMealType = newValue!;
@@ -170,17 +172,25 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
                     value: key,
                     child: Text(
                       mealTypesMap[key]!,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(color: Colors.white),
                     ),
                   );
                 }).toList(),
                 decoration: InputDecoration(
                   labelText: 'Выберите питание от',
-                  labelStyle: Theme.of(context).textTheme.bodyLarge,
+                  labelStyle: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(color: Colors.white),
                 ),
               ),
             if (_showAdditionalSettings)
               DropdownButtonFormField<int>(
+                iconEnabledColor: Colors.white,
+                dropdownColor: context.primaryColor,
                 value: globalRatingType,
                 onChanged: (int? newValue) {
                   setState(() {
@@ -192,13 +202,19 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
                     value: key,
                     child: Text(
                       ratingTypesMap[key]!,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(color: Colors.white),
                     ),
                   );
                 }).toList(),
                 decoration: InputDecoration(
                   labelText: 'Рейтинг отеля от',
-                  labelStyle: Theme.of(context).textTheme.bodyLarge,
+                  labelStyle: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(color: Colors.white),
                 ),
               ),
             if (_showAdditionalSettings)
@@ -234,7 +250,10 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
                 _showAdditionalSettings
                     ? 'Скрыть настройки'
                     : 'Больше настроек',
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.white),
               ),
             ),
             ElevatedButton(
@@ -256,7 +275,7 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge!
-                    .copyWith(color: Theme.of(context).colorScheme.onPrimary),
+                    .copyWith(color: Colors.white),
               ),
             ),
           ],
@@ -271,13 +290,19 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
       children: [
         Text(
           'Ночей ',
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: Colors.white),
         ),
         Row(
           children: [
             Text(
               '${selectedNightRange.start.round()}',
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: Colors.white),
             ),
             RangeSlider(
               values: selectedNightRange,
@@ -297,7 +322,10 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
             ),
             Text(
               '${selectedNightRange.end.round()}',
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: Colors.white),
             ),
           ],
         ),
@@ -316,17 +344,25 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: Colors.white),
         ),
         DropdownButton(
           value: value,
           onChanged: onChanged,
+          dropdownColor: context.primaryColor,
+          iconEnabledColor: Colors.white,
           items: items.map<DropdownMenuItem>((item) {
             return DropdownMenuItem(
               value: item.id,
               child: Text(
                 item.name!,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.white),
               ),
             );
           }).toList(),
@@ -347,7 +383,10 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: Colors.white),
         ),
         Row(
           children: [
@@ -358,16 +397,21 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
                 }
               },
               icon: Icon(Icons.remove),
+              color: Colors.white,
             ),
             Text(
               value.toString(),
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: Colors.white),
             ),
             IconButton(
               onPressed: () {
                 onChanged(value + 1);
               },
               icon: Icon(Icons.add),
+              color: Colors.white,
             ),
           ],
         ),
@@ -382,7 +426,10 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: Colors.white),
         ),
         SizedBox(
           width: 150,
@@ -395,7 +442,10 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
             decoration: const InputDecoration(
               hintText: 'Введите сумму',
             ),
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: Colors.white),
           ),
         ),
       ],
@@ -408,17 +458,37 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: Colors.white),
         ),
         ElevatedButton(
           onPressed: () async {
             DateTimeRange? pickedDateRange = await showDateRangePicker(
-              context: context,
-              initialDateRange: selectedDateRange,
-              firstDate: DateTime.now().add(Duration(days: 1)),
-              lastDate: DateTime(2101),
-              locale: const Locale('ru', 'RU'),
-            );
+                context: context,
+                initialDateRange: selectedDateRange,
+                firstDate: DateTime.now().add(Duration(days: 1)),
+                lastDate: DateTime(2101),
+                locale: const Locale('ru', 'RU'),
+                builder: (BuildContext context, Widget? child) {
+                  return Theme(
+                    data: ThemeData.light().copyWith(
+                      colorScheme: ColorScheme.light(
+                        primary: context.accentColor,
+                        onPrimary: Colors.white,
+                        surface: context.accentColor,
+                        onSurface: Colors.black,
+                      ),
+                      dialogBackgroundColor: context.accentColor,
+                      datePickerTheme: DatePickerThemeData(
+                          headerBackgroundColor: context.accentColor,
+                          headerHeadlineStyle:
+                              TextStyle(backgroundColor: context.accentColor)),
+                    ),
+                    child: child!,
+                  );
+                });
             if (pickedDateRange != null) {
               setState(() {
                 selectedDateRange = pickedDateRange;
@@ -434,7 +504,7 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
-                .copyWith(color: Theme.of(context).colorScheme.primary),
+                .copyWith(color: Colors.white),
           ),
         ),
       ],
@@ -455,7 +525,10 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
         ),
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: Colors.white),
         ),
         Wrap(
           children: items.map((item) {
@@ -463,9 +536,13 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
               contentPadding: EdgeInsets.zero, // Уменьшаем отступы
               title: Text(
                 item.name!,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.white),
               ),
               value: globalHotelTypes.contains(item.id),
+              checkColor: Colors.white,
               onChanged: (bool? isChecked) {
                 onChanged(isChecked, item.id!);
                 // setState(() {

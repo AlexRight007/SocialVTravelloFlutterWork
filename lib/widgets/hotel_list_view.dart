@@ -38,9 +38,9 @@ class HotelListView extends StatelessWidget {
                   if (callback != null) {
                     callback!();
                   }
-                  Navigator.restorablePushNamed(
-                      context, HotelDetailsScreen.routeName,
-                      arguments: hotelData!.tourId2);
+                  HotelDetailsScreen(
+                    tourId: hotelData!.tourId2!,
+                  ).launch(context);
                 },
                 child: Container(
                   decoration: BoxDecoration(

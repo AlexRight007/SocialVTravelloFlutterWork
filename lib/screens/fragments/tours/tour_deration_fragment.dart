@@ -11,8 +11,10 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TourDerectionFragment extends StatefulWidget {
   final ScrollController controller;
+  TabController tabController;
 
-  const TourDerectionFragment({super.key, required this.controller});
+  TourDerectionFragment(
+      {super.key, required this.controller, required this.tabController});
 
   @override
   State<TourDerectionFragment> createState() => _TourDeractionFragment();
@@ -81,6 +83,8 @@ class _TourDeractionFragment extends State<TourDerectionFragment>
           onTap: () {
             globalSelectedCityTo = travelOffer[index].countryCode!;
             currentIndex = 2;
+            widget.tabController.animateTo(2);
+            setState(() {});
             // Navigator.popAndPushNamed(context, HomeScreen.routeName);
           }),
       // staggeredTileBuilder: (int index) =>

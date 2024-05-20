@@ -88,7 +88,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
     double displayWidth = MediaQuery.of(context).size.width;
     double displayHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      // backgroundColor: Theme.of(context).colorScheme.background,
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -181,7 +181,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                           Text(
                             "${tourDetails!.data!.tour!.hotelName}",
                             style: TextStyle(
-                              color: Theme.of(context).colorScheme.onBackground,
+                              // color: Theme.of(context).colorScheme.onBackground,
                               fontSize: 20,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
@@ -191,7 +191,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                           Text(
                             "${tourDetails!.data!.tour!.countryName}, ${tourDetails!.data!.tour!.hotelRegionName}",
                             style: TextStyle(
-                              color: Theme.of(context).colorScheme.onBackground,
+                              // color: Theme.of(context).colorScheme.onBackground,
                               fontSize: 15,
                               fontFamily: 'Montserrat',
                             ),
@@ -208,7 +208,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                         Text(
                           "${insertSpaceEveryNCharacters((tourDetails != null && tourDetails!.data != null && tourDetails!.data!.tour != null && tourDetails!.data!.tour!.price != null) ? tourDetails!.data!.tour!.price! : '', 3)} тг.",
                           style: TextStyle(
-                            color: Theme.of(context).colorScheme.onBackground,
+                            // color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 24,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
@@ -218,7 +218,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                         Text(
                           "${tourDetails!.data!.tour!.placement}",
                           style: TextStyle(
-                            color: Theme.of(context).colorScheme.onBackground,
+                            // color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 15,
                             fontFamily: 'Montserrat',
                           ),
@@ -255,9 +255,9 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                     Text(
                                       "${tourDetails!.data!.hotel!.hotelDescription}",
                                       style: TextStyle(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .onBackground,
+                                        // color: Theme.of(context)
+                                        //     .colorScheme
+                                        //     .onBackground,
                                         fontSize: 15,
                                         fontFamily: 'Montserrat',
                                       ),
@@ -281,18 +281,18 @@ class DdetailsState extends State<HotelDetailsScreen> {
               ListTile(
                 isThreeLine: false,
                 leading: CircleAvatar(
-                  backgroundColor:
-                      Theme.of(context).colorScheme.secondaryContainer,
+                  // backgroundColor:
+                  //     Theme.of(context).colorScheme.secondaryContainer,
                   radius: 26,
                   child: Icon(
                     Icons.location_pin,
-                    color: Theme.of(context).colorScheme.primary,
+                    // color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 title: Text(
                   "${tourDetails!.data!.tour!.countryName}",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground,
+                    // color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -300,10 +300,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                 subtitle: Text(
                   "из ${tourDetails!.data!.tour!.departureNameFrom}",
                   style: TextStyle(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onBackground
-                        .withOpacity(0.4),
+                    // color: Theme.of(context)
+                    //     .colorScheme
+                    //     .onBackground
+                    //     .withOpacity(0.4),
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -314,7 +314,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                     Text(
                       "",
                       style: TextStyle(
-                        color: Colors.blue,
+                        // color: Colors.blue,
                         fontSize: 12,
                         fontFamily: 'Montserrat',
                       ),
@@ -325,18 +325,18 @@ class DdetailsState extends State<HotelDetailsScreen> {
               ListTile(
                 isThreeLine: false,
                 leading: CircleAvatar(
-                  backgroundColor:
-                      Theme.of(context).colorScheme.secondaryContainer,
+                  // backgroundColor:
+                  //     Theme.of(context).colorScheme.secondaryContainer,
                   radius: 26,
                   child: Icon(
                     Icons.calendar_month,
-                    color: Theme.of(context).colorScheme.primary,
+                    // color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 title: Text(
                   "${tourDetails!.data!.tour!.flyDate}",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground,
+                    // color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -344,10 +344,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                 subtitle: Text(
                   "${tourDetails!.data!.tour!.nights} ночей",
                   style: TextStyle(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onBackground
-                        .withOpacity(0.4),
+                    // color: Theme.of(context)
+                    //     .colorScheme
+                    //     .onBackground
+                    //     .withOpacity(0.4),
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -358,7 +358,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                     Text(
                       "",
                       style: TextStyle(
-                        color: Colors.blue,
+                        // color: Colors.blue,
                         fontSize: 12,
                         fontFamily: 'Montserrat',
                       ),
@@ -369,18 +369,18 @@ class DdetailsState extends State<HotelDetailsScreen> {
               ListTile(
                 isThreeLine: false,
                 leading: CircleAvatar(
-                  backgroundColor:
-                      Theme.of(context).colorScheme.secondaryContainer,
+                  // backgroundColor:
+                  //     Theme.of(context).colorScheme.secondaryContainer,
                   radius: 26,
                   child: Icon(
                     Icons.restaurant_sharp,
-                    color: Theme.of(context).colorScheme.primary,
+                    // color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 title: Text(
                   "Питание",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground,
+                    // color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -388,10 +388,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                 subtitle: Text(
                   "${tourDetails!.data!.tour!.meal} - ${mealTypesMap[tourDetails!.data!.tour!.meal] ?? "Другой тип питания"}",
                   style: TextStyle(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onBackground
-                        .withOpacity(0.4),
+                    // color: Theme.of(context)
+                    //     .colorScheme
+                    //     .onBackground
+                    //     .withOpacity(0.4),
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -402,7 +402,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                     Text(
                       "",
                       style: TextStyle(
-                        color: Colors.blue,
+                        // color: Colors.blue,
                         fontSize: 12,
                         fontFamily: 'Montserrat',
                       ),
@@ -413,18 +413,18 @@ class DdetailsState extends State<HotelDetailsScreen> {
               ListTile(
                 isThreeLine: false,
                 leading: CircleAvatar(
-                  backgroundColor:
-                      Theme.of(context).colorScheme.secondaryContainer,
+                  // backgroundColor:
+                  //     Theme.of(context).colorScheme.secondaryContainer,
                   radius: 26,
                   child: Icon(
                     Icons.bed,
-                    color: Theme.of(context).colorScheme.primary,
+                    // color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 title: Text(
                   "${tourDetails!.data!.tour!.room}",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground,
+                    // color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -432,10 +432,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                 subtitle: Text(
                   "${tourDetails!.data!.tour!.placement}",
                   style: TextStyle(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onBackground
-                        .withOpacity(0.4),
+                    // color: Theme.of(context)
+                    //     .colorScheme
+                    //     .onBackground
+                    //     .withOpacity(0.4),
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -446,7 +446,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                     Text(
                       "",
                       style: TextStyle(
-                        color: Colors.blue,
+                        // color: Colors.blue,
                         fontSize: 12,
                         fontFamily: 'Montserrat',
                       ),
@@ -461,18 +461,18 @@ class DdetailsState extends State<HotelDetailsScreen> {
                   ? ListTile(
                       isThreeLine: false,
                       leading: CircleAvatar(
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondaryContainer,
+                        // backgroundColor:
+                        //     Theme.of(context).colorScheme.secondaryContainer,
                         radius: 26,
                         child: Icon(
                           Icons.settings,
-                          color: Theme.of(context).colorScheme.primary,
+                          // color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       title: Text(
                         "Услуги",
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onBackground,
+                          // color: Theme.of(context).colorScheme.onBackground,
                           fontSize: 15,
                           fontFamily: 'Montserrat',
                         ),
@@ -480,10 +480,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                       subtitle: Text(
                         tourDetails!.data!.result!.contents!.join(', '),
                         style: TextStyle(
-                          color: Theme.of(context)
-                              .colorScheme
-                              .onBackground
-                              .withOpacity(0.4),
+                          // color: Theme.of(context)
+                          //     .colorScheme
+                          //     .onBackground
+                          //     .withOpacity(0.4),
                           fontSize: 15,
                           fontFamily: 'Montserrat',
                         ),
@@ -494,7 +494,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                           Text(
                             "",
                             style: TextStyle(
-                              color: Colors.blue,
+                              // color: Colors.blue,
                               fontSize: 12,
                               fontFamily: 'Montserrat',
                             ),
@@ -505,18 +505,18 @@ class DdetailsState extends State<HotelDetailsScreen> {
                   : const SizedBox(),
               ListTile(
                 leading: CircleAvatar(
-                  backgroundColor:
-                      Theme.of(context).colorScheme.secondaryContainer,
+                  // backgroundColor:
+                  //     Theme.of(context).colorScheme.secondaryContainer,
                   radius: 26,
                   child: Icon(
                     Icons.info,
-                    color: Theme.of(context).colorScheme.primary,
+                    // color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 title: Text(
                   "${tourDetails!.data!.tour!.tourName}",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground,
+                    // color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 15,
                     fontFamily: 'Montserrat',
                   ),
@@ -531,7 +531,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                   ? Column(
                       children: [
                         Divider(
-                          color: Colors.black38.withOpacity(0.2),
+                          // color: Colors.black38.withOpacity(0.2),
                           endIndent: 20,
                           indent: 20,
                           height: 4,
@@ -569,9 +569,9 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].departure!.time} ${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].departure!.port!.timeZone}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground,
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground,
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -579,10 +579,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].departure!.date}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground
-                                                    .withOpacity(0.4),
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground
+                                                //     .withOpacity(0.4),
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -594,9 +594,9 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].departure!.port!.shortName}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground,
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground,
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -604,10 +604,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].arrival!.port!.shortName}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground
-                                                    .withOpacity(0.4),
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground
+                                                //     .withOpacity(0.4),
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -619,9 +619,9 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].arrival!.time} ${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].arrival!.port!.timeZone}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground,
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground,
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -629,10 +629,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.forward![i].arrival!.date}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground
-                                                    .withOpacity(0.4),
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground
+                                                //     .withOpacity(0.4),
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -688,9 +688,9 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].departure!.time} ${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].departure!.port!.timeZone}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground,
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground,
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -698,10 +698,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].departure!.date}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground
-                                                    .withOpacity(0.4),
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground
+                                                //     .withOpacity(0.4),
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -713,9 +713,9 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].departure!.port!.shortName}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground,
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground,
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -723,10 +723,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].arrival!.port!.shortName}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground
-                                                    .withOpacity(0.4),
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground
+                                                //     .withOpacity(0.4),
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -738,9 +738,9 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].arrival!.time} ${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].arrival!.port!.timeZone}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground,
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground,
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -748,10 +748,10 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                             Text(
                                               "${tourDetails!.data!.result!.flights!.defaultSet!.reverse![i].arrival!.date}",
                                               style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onBackground
-                                                    .withOpacity(0.4),
+                                                // color: Theme.of(context)
+                                                //     .colorScheme
+                                                //     .onBackground
+                                                //     .withOpacity(0.4),
                                                 fontSize: 15,
                                                 fontFamily: 'Montserrat',
                                               ),
@@ -772,7 +772,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                     )
                   : const SizedBox(),
               const SizedBox(
-                height: 60,
+                height: 100,
               ),
             ],
           )),

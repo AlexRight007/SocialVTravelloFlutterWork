@@ -19,7 +19,6 @@ class ToursFragment extends StatefulWidget {
 class _ToursFragmentState extends State<ToursFragment>
     with TickerProviderStateMixin {
   late TabController tabController;
-  int selectedIndex = 0;
   List<Widget> appTourSearchFragments = [];
   ScrollController _controller = ScrollController();
 
@@ -29,8 +28,15 @@ class _ToursFragmentState extends State<ToursFragment>
     tabController = TabController(length: 3, vsync: this);
     tabController.index = 0;
 
+    tabController.addListener(() {
+      setState(() {});
+    });
+
     appTourSearchFragments.addAll([
-      TourDerectionFragment(controller: _controller),
+      TourDerectionFragment(
+        controller: _controller,
+        tabController: tabController,
+      ),
       TourHotFragment(controller: _controller),
       TourSearchFragment(controller: _controller),
     ]);
@@ -53,7 +59,6 @@ class _ToursFragmentState extends State<ToursFragment>
           indicatorColor: context.primaryColor,
           controller: tabController,
           onTap: (val) async {
-            selectedIndex = val;
             setState(() {});
           },
           tabs: [
@@ -62,11 +67,11 @@ class _ToursFragmentState extends State<ToursFragment>
                   text: language.home,
                   style: secondaryTextStyle(color: Colors.white)),
               child: Image.asset(
-                selectedIndex == 0 ? ic_direction_selected : ic_direction,
+                tabController.index == 0 ? ic_direction_selected : ic_direction,
                 height: 24,
                 width: 24,
                 fit: BoxFit.cover,
-                color: selectedIndex == 0
+                color: tabController.index == 0
                     ? context.primaryColor
                     : context.iconColor,
               ).paddingSymmetric(vertical: 11),
@@ -76,11 +81,11 @@ class _ToursFragmentState extends State<ToursFragment>
                   text: language.home,
                   style: secondaryTextStyle(color: Colors.white)),
               child: Image.asset(
-                selectedIndex == 1 ? ic_hot_selected : ic_hot,
+                tabController.index == 1 ? ic_hot_selected : ic_hot,
                 height: 24,
                 width: 24,
                 fit: BoxFit.cover,
-                color: selectedIndex == 1
+                color: tabController.index == 1
                     ? context.primaryColor
                     : context.iconColor,
               ).paddingSymmetric(vertical: 11),
@@ -94,7 +99,7 @@ class _ToursFragmentState extends State<ToursFragment>
                 height: 24,
                 width: 24,
                 fit: BoxFit.cover,
-                color: selectedIndex == 2
+                color: tabController.index == 2
                     ? context.primaryColor
                     : context.iconColor,
               ).paddingSymmetric(vertical: 11),

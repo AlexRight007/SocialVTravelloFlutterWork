@@ -15,7 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class TourvisorService {
   static const String urlTourAgency = 'https://vv-travel.kz';
-  static const String numberWhatsAppTourAgency = '+77772719636';
+  static const String numberWhatsAppTourAgency = '+77073753464';
   static const String baseUrl = 'https://tourvisor.ru/xml/listdev.php';
   static const String offersUrl = 'https://tourvisor.ru/xml/modmin.php';
   static const String hotelsUrl = 'https://tourvisor.ru/xml/modhot.php';

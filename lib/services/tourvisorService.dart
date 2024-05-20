@@ -36,7 +36,7 @@ class TourvisorService {
 
   static Future<void> sendOrder(String? tourID) async {
     if (tourID != null) {
-      String urlTour = 'https://travelstory.kz/%23tvtourid=$tourID';
+      String urlTour = 'https://travello.kz/%23tvtourid=$tourID';
       String url =
           'https://wa.me/$numberWhatsAppTourAgency/?text=Здравствуйте, пишем вам с мобильного приложения, хотели бы уточнить у вас по поводу тура $urlTour';
       await launchUrl(Uri.parse(url));

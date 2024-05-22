@@ -92,6 +92,10 @@ dependencies:
   # go_router: ^12.1.1
 dependency_overrides:
   video_player: ^2.6.0
+  cached_video_player:
+    git:
+      url: https://github.com/vikram25897/flutter_cached_video_player
+      ref: feature/gradle_version_bump
 dev_dependencies:
   flutter_test:
     sdk: flutter

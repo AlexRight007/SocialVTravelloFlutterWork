@@ -1,7 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 
 /// App Name
-const APP_NAME = "Travello";
+const APP_NAME = "Dami Tour";
 
 /// App Icon src
 const APP_ICON = "assets/app_icon.png";
@@ -59,16 +59,16 @@ const AGORA_APP_ID = '';
 
 Country defaultCountry() {
   return Country(
-    phoneCode: '91',
-    countryCode: 'IN',
-    e164Sc: 91,
+    phoneCode: '7',
+    countryCode: 'RU',
+    e164Sc: 7,
     geographic: true,
     level: 1,
-    name: 'India',
-    example: '9123456789',
-    displayName: 'India (IN) [+91]',
-    displayNameNoCountryCode: 'India (IN)',
-    e164Key: '91-IN-0',
-    fullExampleWithPlusSign: '+919123456789',
+    name: 'Kazakhstan',
+    example: '7077777777',
+    displayName: 'Kazakhstan (KZ) [+7]',
+    displayNameNoCountryCode: 'Kazakhstan (KZ)',
+    e164Key: '7-KZ-0',
+    fullExampleWithPlusSign: '+77077777777',
   );
 }

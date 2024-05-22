@@ -30,7 +30,8 @@ class LanguageEn extends BaseLanguage {
   String get badges => "Badges";
 
   @override
-  String get congratulatesYouAreAchieve => "Congratulates you are achieve the Universe as a user.";
+  String get congratulatesYouAreAchieve =>
+      "Congratulates you are achieve the Universe as a user.";
 
   @override
   String get youHaveEarnedBadge => "You have earned this Badge!";
@@ -75,7 +76,8 @@ class LanguageEn extends BaseLanguage {
   String get moreAboutContentSafety => "More about Content Safety";
 
   @override
-  String get contentFilterOffText => "Shows all relevant results, even if they're explicit";
+  String get contentFilterOffText =>
+      "Shows all relevant results, even if they're explicit";
 
   @override
   String get contentFilterText => "Helps filter out explicit content";
@@ -84,7 +86,8 @@ class LanguageEn extends BaseLanguage {
   String get filter => "Filter";
 
   @override
-  String get contentSafetyText => "This will help you to manage explicit content in your post contents, comments, messages and forums, like bad words.";
+  String get contentSafetyText =>
+      "This will help you to manage explicit content in your post contents, comments, messages and forums, like bad words.";
 
   @override
   String get contentSafety => "Content Safety";
@@ -111,7 +114,8 @@ class LanguageEn extends BaseLanguage {
   String get selectAndProceed => 'Select And Proceed';
 
   @override
-  String get noteLongPressOn => 'Note: Long press on plan to view its descriptions and allowed actions';
+  String get noteLongPressOn =>
+      'Note: Long press on plan to view its descriptions and allowed actions';
 
   @override
   String get groupCreation => 'Group Creation';
@@ -147,7 +151,8 @@ class LanguageEn extends BaseLanguage {
   String get enterLink => 'Enter link';
 
   @override
-  String get accountActivatedText => "Your account was activated successfully! You can now log in with the username and password you provided when you signed up.";
+  String get accountActivatedText =>
+      "Your account was activated successfully! You can now log in with the username and password you provided when you signed up.";
 
   @override
   String get yourAccountIsNowActive => "Your account is now active!";
@@ -189,7 +194,8 @@ class LanguageEn extends BaseLanguage {
   String get viewAllMembershipOptions => 'View All Membership Options';
 
   @override
-  String get noMembershipText => 'You Do Not Have An Active Membership. Choose A Membership Level.';
+  String get noMembershipText =>
+      'You Do Not Have An Active Membership. Choose A Membership Level.';
 
   @override
   String get validTill => 'Valid Till:';
@@ -210,7 +216,8 @@ class LanguageEn extends BaseLanguage {
   String get clickHereToVisitHomePage => 'Click here to visit Home Page';
 
   @override
-  String get cancelMembershipConfirmation => 'Are you sure you want to cancel your Premium membership?';
+  String get cancelMembershipConfirmation =>
+      'Are you sure you want to cancel your Premium membership?';
 
   @override
   String get yesCancelThisMembership => 'Yes, Cancel This Membership';
@@ -234,7 +241,8 @@ class LanguageEn extends BaseLanguage {
   String get pastInvoices => 'Past Invoices';
 
   @override
-  String get startACommunity => 'Start a community that sparks connections and fosters growth.';
+  String get startACommunity =>
+      'Start a community that sparks connections and fosters growth.';
 
   @override
   String get activate => 'Activate';
@@ -252,7 +260,8 @@ class LanguageEn extends BaseLanguage {
   String get sentOTPText => 'We have sent 6 digit code on your mobile number.';
 
   @override
-  String get completeYourProfileText => 'Complete your profile and login by filling out the valid details below.';
+  String get completeYourProfileText =>
+      'Complete your profile and login by filling out the valid details below.';
 
   @override
   String get completeProfile => 'Complete Profile';
@@ -282,7 +291,8 @@ class LanguageEn extends BaseLanguage {
   String get removeCustomWallpaper => 'Remove custom wallpaper';
 
   @override
-  String get removeWallpaperConfirmation => 'Are you sure you want to remove custom wallpaper?';
+  String get removeWallpaperConfirmation =>
+      'Are you sure you want to remove custom wallpaper?';
 
   @override
   String get today => 'Today';
@@ -321,13 +331,16 @@ class LanguageEn extends BaseLanguage {
   String get signInWithOtp => 'Sign in with OTP';
 
   @override
-  String get completeTheActivationText => 'Complete the activation of your account';
+  String get completeTheActivationText =>
+      'Complete the activation of your account';
 
   @override
-  String get deleteCommentConfirmation => "Are you sure do you want to delete this comment?";
+  String get deleteCommentConfirmation =>
+      "Are you sure do you want to delete this comment?";
 
   @override
-  String get protectedPostText => "This content is password protected. To view it please enter your password below:";
+  String get protectedPostText =>
+      "This content is password protected. To view it please enter your password below:";
 
   @override
   String get courseOrders => "Course Orders";
@@ -360,7 +373,8 @@ class LanguageEn extends BaseLanguage {
   String get sendInvitation => "Send Invitation";
 
   @override
-  String get addAPersonalizedMessage => "Add a personalized message to the invitation (optional)";
+  String get addAPersonalizedMessage =>
+      "Add a personalized message to the invitation (optional)";
 
   @override
   String get emailAddressOfNewUser => "Email address of new user";
@@ -370,7 +384,8 @@ class LanguageEn extends BaseLanguage {
       "Fill out the form below to invite a new user to join this site. Upon submission of the form, an email will be sent to the invitee containing a link to accept your invitation. You may also add a custom message to the email.";
 
   @override
-  String get cancelInviteRequest => "Are you sure you want to cancel this Invite Request?";
+  String get cancelInviteRequest =>
+      "Are you sure you want to cancel this Invite Request?";
 
   @override
   String get resendInvitation => "Resend Invitation";
@@ -394,13 +409,15 @@ class LanguageEn extends BaseLanguage {
   String get newConversationText => 'Write a message to start the conversation';
 
   @override
-  String get listOfUsersBlocked => 'This is a list of users that you have blocked. You may unblock them from the blocklist below.';
+  String get listOfUsersBlocked =>
+      'This is a list of users that you have blocked. You may unblock them from the blocklist below.';
 
   @override
   String get youHaventBlockedText => 'You haven’t blocked anyone yet';
 
   @override
-  String get enableInviteConversation => 'When enabled, conversation participants will be able to add other users to conversation.';
+  String get enableInviteConversation =>
+      'When enabled, conversation participants will be able to add other users to conversation.';
 
   @override
   String get kickParticipant => 'Kick Participant';
@@ -412,7 +429,8 @@ class LanguageEn extends BaseLanguage {
   String get userProfile => 'User Profile';
 
   @override
-  String get allowInviteText => 'Allow conversation members to invite other members';
+  String get allowInviteText =>
+      'Allow conversation members to invite other members';
 
   @override
   String get changeConversationSubject => 'Change conversation subject';
@@ -430,7 +448,8 @@ class LanguageEn extends BaseLanguage {
   String get starredMessages => 'Starred Messages';
 
   @override
-  String get youCanTSendMessage => 'You can\'t send message to user who was blocked by you';
+  String get youCanTSendMessage =>
+      'You can\'t send message to user who was blocked by you';
 
   @override
   String get conversations => 'Conversations';
@@ -463,7 +482,8 @@ class LanguageEn extends BaseLanguage {
   String get addParticipants => 'Add Participants';
 
   @override
-  String get addParticipantText => 'Add a new participant and unlock fresh perspectives.';
+  String get addParticipantText =>
+      'Add a new participant and unlock fresh perspectives.';
 
   @override
   String get editMessage => 'Edit Message';
@@ -502,7 +522,8 @@ class LanguageEn extends BaseLanguage {
   String get viewParticipants => 'View Participants';
 
   @override
-  String get deleteChatConfirmation => 'Are you sure do you want to delete this chat?';
+  String get deleteChatConfirmation =>
+      'Are you sure do you want to delete this chat?';
 
   @override
   String get messageHidden => 'Message Hidden';
@@ -523,10 +544,12 @@ class LanguageEn extends BaseLanguage {
   String get promoteToMod => "Promote to Mod";
 
   @override
-  String get enableGalleryCheckBoxText => "Yes. I want this group to have a Gallery";
+  String get enableGalleryCheckBoxText =>
+      "Yes. I want this group to have a Gallery";
 
   @override
-  String get enableGallerySubtitle => "Bring your creativity to life and showcase it to the world by enabling the gallery feature on our platform.";
+  String get enableGallerySubtitle =>
+      "Bring your creativity to life and showcase it to the world by enabling the gallery feature on our platform.";
 
   @override
   String get enableGallery => "Enable Gallery";
@@ -541,7 +564,8 @@ class LanguageEn extends BaseLanguage {
   String get allGroupMembers => "All group members";
 
   @override
-  String get groupInvitationsSubtitle => "Which members of this group are allowed to invite others?";
+  String get groupInvitationsSubtitle =>
+      "Which members of this group are allowed to invite others?";
 
   @override
   String get groupInvitations => "Group Invitations";
@@ -562,7 +586,8 @@ class LanguageEn extends BaseLanguage {
   String get addMedia => "Add Media";
 
   @override
-  String get albumDeleteConfirmation => "Are you sure you want to delete this Album?";
+  String get albumDeleteConfirmation =>
+      "Are you sure you want to delete this Album?";
 
   @override
   String get createAlbum => "Create Album";
@@ -571,7 +596,8 @@ class LanguageEn extends BaseLanguage {
   String get addYourAlbum => "Add Your Album";
 
   @override
-  String get pushYourCreativityWithAlbums => "Push your Creativity with Albums and show your moments with your circle.";
+  String get pushYourCreativityWithAlbums =>
+      "Push your Creativity with Albums and show your moments with your circle.";
 
   @override
   String get create => "Create";
@@ -601,10 +627,12 @@ class LanguageEn extends BaseLanguage {
   String get onYourComment => "on your comment";
 
   @override
-  String get removeCouponConfirmation => "Are you sure you want to remove this coupon?";
+  String get removeCouponConfirmation =>
+      "Are you sure you want to remove this coupon?";
 
   @override
-  String get removeMediaConfirmation => "Are you sure you want delete this media?";
+  String get removeMediaConfirmation =>
+      "Are you sure you want delete this media?";
 
   @override
   String get reactedBy => "Reacted by";
@@ -706,7 +734,8 @@ class LanguageEn extends BaseLanguage {
   String get orderId => 'Order Id';
 
   @override
-  String get completeLessonConfirmation => 'Are you sure you want to complete this lesson?';
+  String get completeLessonConfirmation =>
+      'Are you sure you want to complete this lesson?';
 
   @override
   String get complete => 'Complete';
@@ -727,7 +756,8 @@ class LanguageEn extends BaseLanguage {
   String get myCourses => 'My Courses';
 
   @override
-  String get finishCourseConfirmation => 'Are you sure you want to finish this course?';
+  String get finishCourseConfirmation =>
+      'Are you sure you want to finish this course?';
 
   @override
   String get finishCourse => 'Finish Course';
@@ -772,7 +802,8 @@ class LanguageEn extends BaseLanguage {
   String get enjoyLearning => 'Enjoy Learning !!';
 
   @override
-  String get congratulationsYouHavSuccessfully => 'Congratulations You hav successfully enrolled this Course.';
+  String get congratulationsYouHavSuccessfully =>
+      'Congratulations You hav successfully enrolled this Course.';
 
   @override
   String get prev => 'Prev';
@@ -787,7 +818,8 @@ class LanguageEn extends BaseLanguage {
   String get incorrect => 'Incorrect';
 
   @override
-  String get thisContentIsProtected => 'This content is protected. Please enroll in the course to view this content!';
+  String get thisContentIsProtected =>
+      'This content is protected. Please enroll in the course to view this content!';
 
   @override
   String get result => 'Result';
@@ -904,7 +936,8 @@ class LanguageEn extends BaseLanguage {
   String get deletePermanently => 'Delete Permanently';
 
   @override
-  String get trashConfirmationText => 'Are you sure you want to move this story to Trash?';
+  String get trashConfirmationText =>
+      'Are you sure you want to move this story to Trash?';
 
   @override
   String get moveToTrash => 'Move to Trash';
@@ -916,34 +949,43 @@ class LanguageEn extends BaseLanguage {
   String get productDetails => 'Product Details';
 
   @override
-  String get followThisAccountText => 'Follow this account to see their posts and other details';
+  String get followThisAccountText =>
+      'Follow this account to see their posts and other details';
 
   @override
   String get thisAccountIsPrivate => 'This account is private';
 
   @override
-  String get createGroupHiddenC => "Group content and activity will only be visible to members of the group.";
+  String get createGroupHiddenC =>
+      "Group content and activity will only be visible to members of the group.";
 
   @override
-  String get createGroupHiddenB => "This group will not be listed in the groups directory or search results.";
+  String get createGroupHiddenB =>
+      "This group will not be listed in the groups directory or search results.";
 
   @override
-  String get createGroupHiddenA => "Only users who are invited can join the group.";
+  String get createGroupHiddenA =>
+      "Only users who are invited can join the group.";
 
   @override
-  String get createGroupPrivateC => "Group content and activity will only be visible to members of the group.";
+  String get createGroupPrivateC =>
+      "Group content and activity will only be visible to members of the group.";
 
   @override
-  String get createGroupPrivateB => "This group will be listed in the groups directory and in search results.";
+  String get createGroupPrivateB =>
+      "This group will be listed in the groups directory and in search results.";
 
   @override
-  String get createGroupPrivateA => "Only people who request membership and are accepted can join the group.";
+  String get createGroupPrivateA =>
+      "Only people who request membership and are accepted can join the group.";
 
   @override
-  String get createGroupPublicC => "Group content and activity will be visible to any site member.";
+  String get createGroupPublicC =>
+      "Group content and activity will be visible to any site member.";
 
   @override
-  String get createGroupPublicB => "This group will be listed in the groups directory and in search results.";
+  String get createGroupPublicB =>
+      "This group will be listed in the groups directory and in search results.";
 
   @override
   String get createGroupPublicA => "Any site member can join this group.";
@@ -1045,19 +1087,23 @@ class LanguageEn extends BaseLanguage {
   String get cancelOrderMessageSix => "Order placed by mistake";
 
   @override
-  String get cancelOrderMessageFive => "Bad review from friends/relatives after ordering the product.";
+  String get cancelOrderMessageFive =>
+      "Bad review from friends/relatives after ordering the product.";
 
   @override
-  String get cancelOrderMessageFour => "The price of the product has fallen due to sales/discounts and customer wants to get it at a lesser price";
+  String get cancelOrderMessageFour =>
+      "The price of the product has fallen due to sales/discounts and customer wants to get it at a lesser price";
 
   @override
-  String get cancelOrderMessageThree => "Cheaper alternative available for lesser price";
+  String get cancelOrderMessageThree =>
+      "Cheaper alternative available for lesser price";
 
   @override
   String get cancelOrderMessageTwo => "Product is not required anymore";
 
   @override
-  String get cancelOrderMessageOne => "Product is being delivered to a wrong address";
+  String get cancelOrderMessageOne =>
+      "Product is being delivered to a wrong address";
 
   @override
   String get shippingCost => "Shipping Cost";
@@ -1072,7 +1118,8 @@ class LanguageEn extends BaseLanguage {
   String get yes => "Yes";
 
   @override
-  String get deleteOrderConfirmation => "Are you sure you want to move this order to trash?";
+  String get deleteOrderConfirmation =>
+      "Are you sure you want to move this order to trash?";
 
   @override
   String get orderDeletedSuccessfully => "Order Deleted Successfully";
@@ -1084,7 +1131,8 @@ class LanguageEn extends BaseLanguage {
   String get cancelOrder => "Cancel Order";
 
   @override
-  String get hiddenPostText => "This post has been hidden. You'll not find this post in newsfeed now.";
+  String get hiddenPostText =>
+      "This post has been hidden. You'll not find this post in newsfeed now.";
 
   @override
   String get reasonForCancellation => "Reason for cancellation of order";
@@ -1144,7 +1192,8 @@ class LanguageEn extends BaseLanguage {
   String get viewGroup => "View Group";
 
   @override
-  String get notePleaseAddComma => "Note: Please add comma separated list of tags";
+  String get notePleaseAddComma =>
+      "Note: Please add comma separated list of tags";
 
   @override
   String get registeredSuccessfully => "Registered Successfully";
@@ -1153,7 +1202,8 @@ class LanguageEn extends BaseLanguage {
   String get requestVerification => "Request Verification";
 
   @override
-  String get verificationRequestRejectedText => "sorry your verification request is rejected.";
+  String get verificationRequestRejectedText =>
+      "sorry your verification request is rejected.";
 
   @override
   String get yourAccountIsVerifiedNow => "your account is verified now.";
@@ -1183,7 +1233,8 @@ class LanguageEn extends BaseLanguage {
   String get tags => "Tags";
 
   @override
-  String get notesAboutYourOrder => "Notes about your order, e.g. special notes for delivery";
+  String get notesAboutYourOrder =>
+      "Notes about your order, e.g. special notes for delivery";
 
   @override
   String get optional => "optional";
@@ -1198,7 +1249,8 @@ class LanguageEn extends BaseLanguage {
   String get groupForum => 'Group Forum';
 
   @override
-  String get groupAsForumText => 'Create a discussion forum to allow members of this group to communicate in a structured, bulletin-board style fashion.';
+  String get groupAsForumText =>
+      'Create a discussion forum to allow members of this group to communicate in a structured, bulletin-board style fashion.';
 
   @override
   String get wantGroupAsForum => 'Yes. I want this group to have a forum.';
@@ -1273,7 +1325,8 @@ class LanguageEn extends BaseLanguage {
   String get shippingAddress => 'Shipping Address';
 
   @override
-  String get billingAndShippingAddresses => 'Billing and shipping addresses are the same';
+  String get billingAndShippingAddresses =>
+      'Billing and shipping addresses are the same';
 
   @override
   String get copiedToClipboard => 'Copied to Clipboard';
@@ -1351,7 +1404,8 @@ class LanguageEn extends BaseLanguage {
   String get placeOrder => 'Place Order';
 
   @override
-  String get placeOrderText => 'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.';
+  String get placeOrderText =>
+      'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.';
 
   @override
   String get orderDetails => 'Order Details';
@@ -1360,7 +1414,8 @@ class LanguageEn extends BaseLanguage {
   String get orderCancelledSuccessfully => 'Order Cancelled Successfully';
 
   @override
-  String get cancelOrderConfirmation => 'Are you sure you want to cancel this order?';
+  String get cancelOrderConfirmation =>
+      'Are you sure you want to cancel this order?';
 
   @override
   String get orderStatus => 'Order Status';
@@ -1417,7 +1472,8 @@ class LanguageEn extends BaseLanguage {
   String get reviewDeletedSuccessfully => 'Review Deleted Successfully';
 
   @override
-  String get deleteReviewConfirmation => 'Are you sure you want to delete this review?';
+  String get deleteReviewConfirmation =>
+      'Are you sure you want to delete this review?';
 
   @override
   String get yourCartIsCurrentlyEmpty => 'Your cart is currently empty.';
@@ -1432,7 +1488,8 @@ class LanguageEn extends BaseLanguage {
   String get itemRemovedSuccessfully => 'Item removed successfully';
 
   @override
-  String get removeFromCartConfirmation => 'Are you sure you want to remove this item from cart?';
+  String get removeFromCartConfirmation =>
+      'Are you sure you want to remove this item from cart?';
 
   @override
   String get appliedCoupons => 'Applied Coupons';
@@ -1540,7 +1597,8 @@ class LanguageEn extends BaseLanguage {
   String get bySigningUpYou => 'By signing up, you agree to our';
 
   @override
-  String get addStoryText => 'Push your Creativity with stories and show your moments with your circle.';
+  String get addStoryText =>
+      'Push your Creativity with stories and show your moments with your circle.';
 
   @override
   String get setStoryDuration => 'Set Story Duration';
@@ -1552,7 +1610,8 @@ class LanguageEn extends BaseLanguage {
   String get addYourStory => 'Add Your Story';
 
   @override
-  String get deleteStoryConfirmation => 'Are you sure you want to delete this story?';
+  String get deleteStoryConfirmation =>
+      'Are you sure you want to delete this story?';
 
   @override
   String get viewedBy => 'Viewed by';
@@ -1588,7 +1647,8 @@ class LanguageEn extends BaseLanguage {
   String get report => 'Report';
 
   @override
-  String get blockText => 'They won\'t be able to find your profile, posts or story on SocialV. They won\'t be notified that you\'ve blocked them.';
+  String get blockText =>
+      'They won\'t be able to find your profile, posts or story on Dami Tour. They won\'t be notified that you\'ve blocked them.';
 
   @override
   String get block => 'Block';
@@ -1600,7 +1660,8 @@ class LanguageEn extends BaseLanguage {
   String get unblock => 'Unblock';
 
   @override
-  String get unblockText => 'will now be able to request to follow you, find your profile, posts or story on SocailV. They won\'t be notified that you\'ve unblocked them.';
+  String get unblockText =>
+      'will now be able to request to follow you, find your profile, posts or story on SocailV. They won\'t be notified that you\'ve unblocked them.';
 
   @override
   String get blockedAccounts => 'Blocked Accounts';
@@ -1609,10 +1670,12 @@ class LanguageEn extends BaseLanguage {
   String get reportPortText => 'can delete post.';
 
   @override
-  String get reportAccountText => 'can suspend or deactivate reported account/post.';
+  String get reportAccountText =>
+      'can suspend or deactivate reported account/post.';
 
   @override
-  String get reportText => 'Flag inappropriate, abusive, or otherwise unacceptable behaviour to the site administrator.  Administrators can see the report in the backend and';
+  String get reportText =>
+      'Flag inappropriate, abusive, or otherwise unacceptable behaviour to the site administrator.  Administrators can see the report in the backend and';
 
   @override
   String get whatAreYouReportingFor => 'What are you reporting this for?';
@@ -1627,13 +1690,15 @@ class LanguageEn extends BaseLanguage {
   String get addFriends => "Add Friends";
 
   @override
-  String get initialHomeText => "Having real social contacts can sometimes be difficult FUN, everything becomes much simpler!";
+  String get initialHomeText =>
+      "Having real social contacts can sometimes be difficult FUN, everything becomes much simpler!";
 
   @override
   String get manageAccount => "Manage Account";
 
   @override
-  String get deleteAccountConfirmation => "Are you sure you want to delete your account?";
+  String get deleteAccountConfirmation =>
+      "Are you sure you want to delete your account?";
 
   @override
   String get deleteAccount => "Delete Account";
@@ -1642,10 +1707,12 @@ class LanguageEn extends BaseLanguage {
   String get demoUserText => "Demo User can't perform this action";
 
   @override
-  String get deleteNotificationConfirmation => "Are you sure you want to delete this notification?";
+  String get deleteNotificationConfirmation =>
+      "Are you sure you want to delete this notification?";
 
   @override
-  String get leaveGroupConfirmation => "Are you sure you want to leave this group?";
+  String get leaveGroupConfirmation =>
+      "Are you sure you want to leave this group?";
 
   @override
   String get appSetting => "App Setting";
@@ -1702,7 +1769,8 @@ class LanguageEn extends BaseLanguage {
   String get helloUser => "Hello User";
 
   @override
-  String get createYourAccountFor => "Create Your Account For Better Experience";
+  String get createYourAccountFor =>
+      "Create Your Account For Better Experience";
 
   @override
   String get fullName => "Full Name";
@@ -1720,7 +1788,8 @@ class LanguageEn extends BaseLanguage {
   String get forgetPassword => "Forget Password ?";
 
   @override
-  String get enterTheEmailAssociated => "Enter The email Associated With Your \n Account To Receive A Reset Password Mail";
+  String get enterTheEmailAssociated =>
+      "Enter The email Associated With Your \n Account To Receive A Reset Password Mail";
 
   @override
   String get enterYourEmail => "Enter Your Email";
@@ -1735,7 +1804,8 @@ class LanguageEn extends BaseLanguage {
   String get otpVerification => "OTP Verification";
 
   @override
-  String get weHaveSentA => "We Have Sent A 4 Digit Code To Your \n Email Address";
+  String get weHaveSentA =>
+      "We Have Sent A 4 Digit Code To Your \n Email Address";
 
   @override
   String get dReceiveTheOtp => "Don't Receive The OTP";
@@ -1915,7 +1985,8 @@ class LanguageEn extends BaseLanguage {
   String get doYouWantTo => 'Do You Want To Delete This Group?';
 
   @override
-  String get coverImageRemovedSuccessfully => 'Cover Image Removed Successfully';
+  String get coverImageRemovedSuccessfully =>
+      'Cover Image Removed Successfully';
 
   @override
   String get cRemoveCoverImage => 'Can\'t Remove Cover Image';
@@ -2158,13 +2229,16 @@ class LanguageEn extends BaseLanguage {
   String get noMembersFoundTo => 'No Members Found to Invite';
 
   @override
-  String get profilePictureUpdatedSuccessfully => "Profile Picture updated Successfully";
+  String get profilePictureUpdatedSuccessfully =>
+      "Profile Picture updated Successfully";
 
   @override
-  String get profilePictureRemovedSuccessfully => "Profile Picture Removed Successfully";
+  String get profilePictureRemovedSuccessfully =>
+      "Profile Picture Removed Successfully";
 
   @override
-  String get removeGroupMemberConfirmation => "Are you sure you want to remove this member from group ?";
+  String get removeGroupMemberConfirmation =>
+      "Are you sure you want to remove this member from group ?";
 
   @override
   String get remove => "Remove";
@@ -2236,7 +2310,8 @@ class LanguageEn extends BaseLanguage {
   String get email => 'Email';
 
   @override
-  String get confirmPasswordError => 'Confirm password is not same as new password';
+  String get confirmPasswordError =>
+      'Confirm password is not same as new password';
 
   @override
   String get enterValidDetails => 'Please Enter valid details';

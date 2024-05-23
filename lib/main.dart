@@ -83,7 +83,8 @@ class _MyAppState extends State<MyApp> {
 
   void init() async {
     afterBuildCreated(() async {
-      int themeModeIndex = getIntAsync(SharePreferencesKey.APP_THEME, defaultValue: AppThemeMode.ThemeModeSystem);
+      int themeModeIndex = getIntAsync(SharePreferencesKey.APP_THEME,
+          defaultValue: AppThemeMode.ThemeModeSystem);
 
       if (themeModeIndex == AppThemeMode.ThemeModeLight) {
         appStore.toggleDarkMode(value: false, isFromMain: true);
@@ -91,25 +92,37 @@ class _MyAppState extends State<MyApp> {
         appStore.toggleDarkMode(value: true, isFromMain: true);
       }
 
-      await appStore.setLoggedIn(getBoolAsync(SharePreferencesKey.IS_LOGGED_IN));
+      await appStore
+          .setLoggedIn(getBoolAsync(SharePreferencesKey.IS_LOGGED_IN));
       if (appStore.isLoggedIn) {
         appStore.setToken(getStringAsync(SharePreferencesKey.TOKEN));
-        appStore.setVerificationStatus(getStringAsync(SharePreferencesKey.VERIFICATION_STATUS));
+        appStore.setVerificationStatus(
+            getStringAsync(SharePreferencesKey.VERIFICATION_STATUS));
         appStore.setNonce(getStringAsync(SharePreferencesKey.NONCE));
         appStore.setLoginEmail(getStringAsync(SharePreferencesKey.LOGIN_EMAIL));
-        appStore.setLoginName(getStringAsync(SharePreferencesKey.LOGIN_DISPLAY_NAME));
-        appStore.setLoginFullName(getStringAsync(SharePreferencesKey.LOGIN_FULL_NAME));
-        appStore.setLoginUserId(getStringAsync(SharePreferencesKey.LOGIN_USER_ID));
-        appStore.setLoginAvatarUrl(getStringAsync(SharePreferencesKey.LOGIN_AVATAR_URL));
-        messageStore.setBmSecretKey(getStringAsync(SharePreferencesKey.BM_SECRET_KEY));
+        appStore.setLoginName(
+            getStringAsync(SharePreferencesKey.LOGIN_DISPLAY_NAME));
+        appStore.setLoginFullName(
+            getStringAsync(SharePreferencesKey.LOGIN_FULL_NAME));
+        appStore
+            .setLoginUserId(getStringAsync(SharePreferencesKey.LOGIN_USER_ID));
+        appStore.setLoginAvatarUrl(
+            getStringAsync(SharePreferencesKey.LOGIN_AVATAR_URL));
+        messageStore
+            .setBmSecretKey(getStringAsync(SharePreferencesKey.BM_SECRET_KEY));
 
-        messageStore.setUserNameKey(getStringAsync(SharePreferencesKey.USERNAME_KEY));
-        messageStore.setUserAvatarKey(getStringAsync(SharePreferencesKey.USER_AVATAR_KEY));
+        messageStore
+            .setUserNameKey(getStringAsync(SharePreferencesKey.USERNAME_KEY));
+        messageStore.setUserAvatarKey(
+            getStringAsync(SharePreferencesKey.USER_AVATAR_KEY));
       }
 
-      appStore.setFilterContent(getBoolAsync(SharePreferencesKey.FILTER_CONTENT, defaultValue: true));
-      if (getMemberListPref().isNotEmpty) appStore.recentMemberSearchList.addAll(getMemberListPref());
-      if (getGroupListPref().isNotEmpty) appStore.recentGroupsSearchList.addAll(getGroupListPref());
+      appStore.setFilterContent(
+          getBoolAsync(SharePreferencesKey.FILTER_CONTENT, defaultValue: true));
+      if (getMemberListPref().isNotEmpty)
+        appStore.recentMemberSearchList.addAll(getMemberListPref());
+      if (getGroupListPref().isNotEmpty)
+        appStore.recentGroupsSearchList.addAll(getGroupListPref());
 
       if (getLmsQuizListPref().isNotEmpty) {
         lmsStore.quizList.addAll(getLmsQuizListPref());
@@ -147,8 +160,10 @@ class _MyAppState extends State<MyApp> {
           title: APP_NAME,
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          themeMode: appStore.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+          darkTheme: AppTheme.lightTheme,
+          // darkTheme: AppTheme.darkTheme,
+          // themeMode: appStore.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+          themeMode: ThemeMode.light,
           home: SplashScreen(),
           supportedLocales: LanguageDataModel.languageLocales(),
           localizationsDelegates: [
@@ -158,7 +173,8 @@ class _MyAppState extends State<MyApp> {
             GlobalCupertinoLocalizations.delegate,
           ],
           localeResolutionCallback: (locale, supportedLocales) => locale,
-          locale: Locale(appStore.selectedLanguage.validate(value: Constants.defaultLanguage)),
+          locale: Locale(appStore.selectedLanguage
+              .validate(value: Constants.defaultLanguage)),
           onGenerateRoute: (settings) {
             String pathComponents = settings.name!.split('/').last;
 
@@ -172,7 +188,8 @@ class _MyAppState extends State<MyApp> {
 
 class MyBehavior extends ScrollBehavior {
   @override
-  Widget buildOverscrollIndicator(BuildContext context, Widget child, ScrollableDetails details) {
+  Widget buildOverscrollIndicator(
+      BuildContext context, Widget child, ScrollableDetails details) {
     return child;
   }
 }

@@ -9,6 +9,7 @@ import 'package:socialv/models/tourvisor/hotel_type.dart';
 import 'dart:developer';
 
 import 'package:socialv/services/tourvisorService.dart';
+import 'package:socialv/utils/colors.dart';
 import 'package:socialv/utils/constants.dart';
 
 class SearchFormWidget extends StatefulWidget {
@@ -268,7 +269,7 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
                 // Дальнейшая обработка значений бюджета
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.primary,
+                backgroundColor: blueTickColor,
               ),
               child: Text(
                 'Искать',
@@ -306,6 +307,7 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
             ),
             RangeSlider(
               values: selectedNightRange,
+              activeColor: blueTickColor,
               min: 1,
               max: 30,
               onChanged: (RangeValues values) {
@@ -464,6 +466,8 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
               .copyWith(color: Colors.white),
         ),
         ElevatedButton(
+          style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(blueTickColor)),
           onPressed: () async {
             DateTimeRange? pickedDateRange = await showDateRangePicker(
                 context: context,
@@ -475,16 +479,16 @@ class _SearchFormWidgetState extends State<SearchFormWidget> {
                   return Theme(
                     data: ThemeData.light().copyWith(
                       colorScheme: ColorScheme.light(
-                        primary: context.accentColor,
+                        primary: blueTickColor,
                         onPrimary: Colors.white,
-                        surface: context.accentColor,
+                        surface: blueTickColor,
                         onSurface: Colors.black,
                       ),
-                      dialogBackgroundColor: context.accentColor,
+                      dialogBackgroundColor: blueTickColor,
                       datePickerTheme: DatePickerThemeData(
-                          headerBackgroundColor: context.accentColor,
+                          headerBackgroundColor: blueTickColor,
                           headerHeadlineStyle:
-                              TextStyle(backgroundColor: context.accentColor)),
+                              TextStyle(backgroundColor: blueTickColor)),
                     ),
                     child: child!,
                   );

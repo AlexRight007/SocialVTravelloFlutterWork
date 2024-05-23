@@ -223,7 +223,8 @@ abstract class AppStoreBase with Store {
   @action
   Future<void> setFilterContent(bool val, {bool isInitializing = false}) async {
     filterContent = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.FILTER_CONTENT, val);
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.FILTER_CONTENT, val);
   }
 
   @action
@@ -247,26 +248,30 @@ abstract class AppStoreBase with Store {
   }
 
   @action
-  Future<void> setDefaultReaction(ReactionsModel val, {bool isInitializing = false}) async {
+  Future<void> setDefaultReaction(ReactionsModel val,
+      {bool isInitializing = false}) async {
     defaultReaction = val;
   }
 
   @action
   Future<void> setGiphyKey(String val, {bool isInitializing = false}) async {
     giphyKey = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.GIPHY_API_KEY, '$val');
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.GIPHY_API_KEY, '$val');
   }
 
   @action
   Future<void> setIOSGiphyKey(String val, {bool isInitializing = false}) async {
     iosGiphyKey = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.IOS_GIPHY_API_KEY, '$val');
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.IOS_GIPHY_API_KEY, '$val');
   }
 
   @action
   Future<void> setWooCurrency(String val, {bool isInitializing = false}) async {
     wooCurrency = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.WOO_CURRENCY, '$val');
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.WOO_CURRENCY, '$val');
   }
 
   @action
@@ -276,9 +281,11 @@ abstract class AppStoreBase with Store {
   }
 
   @action
-  Future<void> setVerificationStatus(String val, {bool isInitializing = false}) async {
+  Future<void> setVerificationStatus(String val,
+      {bool isInitializing = false}) async {
     verificationStatus = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.VERIFICATION_STATUS, '$val');
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.VERIFICATION_STATUS, '$val');
   }
 
   @action
@@ -365,21 +372,25 @@ abstract class AppStoreBase with Store {
   }
 
   @action
-  Future<void> setLoginFullName(String val, {bool isInitializing = false}) async {
+  Future<void> setLoginFullName(String val,
+      {bool isInitializing = false}) async {
     loginFullName = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.LOGIN_FULL_NAME, val);
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.LOGIN_FULL_NAME, val);
   }
 
   @action
   Future<void> setLoginName(String val, {bool isInitializing = false}) async {
     loginName = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.LOGIN_DISPLAY_NAME, val);
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.LOGIN_DISPLAY_NAME, val);
   }
 
   @action
   Future<void> setPassword(String val, {bool isInitializing = false}) async {
     password = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.LOGIN_PASSWORD, val);
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.LOGIN_PASSWORD, val);
   }
 
   @action
@@ -389,9 +400,11 @@ abstract class AppStoreBase with Store {
   }
 
   @action
-  Future<void> setLoginAvatarUrl(String val, {bool isInitializing = false}) async {
+  Future<void> setLoginAvatarUrl(String val,
+      {bool isInitializing = false}) async {
     loginAvatarUrl = val;
-    if (!isInitializing) await setValue(SharePreferencesKey.LOGIN_AVATAR_URL, val);
+    if (!isInitializing)
+      await setValue(SharePreferencesKey.LOGIN_AVATAR_URL, val);
   }
 
   @action
@@ -407,7 +420,8 @@ abstract class AppStoreBase with Store {
 
   @action
   Future<void> toggleDarkMode({bool? value, bool isFromMain = false}) async {
-    isDarkMode = value ?? !isDarkMode;
+    isDarkMode = false;
+    // isDarkMode = value ?? !isDarkMode;
 
     if (isDarkMode) {
       textPrimaryColorGlobal = Colors.white;
@@ -425,13 +439,19 @@ abstract class AppStoreBase with Store {
       shadowColorGlobal = Colors.black12;
     }
 
-    if (!isFromMain) setStatusBarColor(isDarkMode ? appBackgroundColorDark : appLayoutBackground, delayInMilliSeconds: 300);
+    if (!isFromMain)
+      setStatusBarColor(
+          isDarkMode ? appBackgroundColorDark : appLayoutBackground,
+          delayInMilliSeconds: 300);
   }
 
   @action
   Future<void> setLanguage(String aCode, {BuildContext? context}) async {
-    selectedLanguageDataModel = getSelectedLanguageModel(defaultLanguage: Constants.defaultLanguage);
-    selectedLanguage = getSelectedLanguageModel(defaultLanguage: Constants.defaultLanguage)!.languageCode!;
+    selectedLanguageDataModel =
+        getSelectedLanguageModel(defaultLanguage: Constants.defaultLanguage);
+    selectedLanguage =
+        getSelectedLanguageModel(defaultLanguage: Constants.defaultLanguage)!
+            .languageCode!;
     language = await AppLocalizations().load(Locale(selectedLanguage));
   }
 }

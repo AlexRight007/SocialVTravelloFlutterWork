@@ -250,7 +250,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                 child: SliverAppBar(
                   forceElevated: true,
                   elevation: 0.5,
-                  expandedHeight: 110,
+                  expandedHeight: 100,
                   floating: true,
                   pinned: true,
                   backgroundColor: context.scaffoldBackgroundColor,
@@ -258,13 +258,14 @@ class _DashboardScreenState extends State<DashboardScreen>
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset(APP_ICON, width: 26),
-                      4.width,
-                      Text(APP_NAME,
-                          style: boldTextStyle(
-                              color: context.primaryColor,
-                              size: 24,
-                              fontFamily: fontFamily)),
+                      Image.asset(APP_ICON, width: 100),
+                      // 4.width,
+                      // Text(APP_NAME,
+                      //     style: boldTextStyle(
+                      //         color: context.primaryColor,
+                      //         size: 24,
+                      //         fontFamily: fontFamily)
+                      //         ),
                     ],
                   ),
                   actions: [

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-const appColorPrimary = Color(0xFF2F65B9);
+const appColorPrimary = Color(0xFF7814C1);
 
 const appOrangeColor = Color(0xFFff6900);
 const appGreenColor = Color(0xFF00d084);
-const blueTickColor = Colors.blue;
+const blueTickColor = Colors.purpleAccent;
 const starColor = Color(0xFFFFC840);
 
 //Section BG / page BG

@@ -5,6 +5,7 @@ import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import 'package:socialv/models/tourvisor/tour_details_model.dart';
 import 'package:socialv/services/tourvisorService.dart';
+import 'package:socialv/utils/colors.dart';
 import 'package:socialv/utils/constants.dart';
 
 class HotelDetailsScreen extends StatefulWidget {
@@ -557,9 +558,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                               angle: 90 * 3.14 / 180,
                                               child: Icon(
                                                 Icons.airplanemode_active,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .primary,
+                                                color: blueTickColor,
                                               ),
                                             ),
                                           ],
@@ -676,9 +675,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                                               angle: 270 * 3.14 / 180,
                                               child: Icon(
                                                 Icons.airplanemode_active,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .primary,
+                                                color: blueTickColor,
                                               ),
                                             ),
                                           ],
@@ -781,7 +778,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
               height: displayWidth * .155,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: blueTickColor,
                   borderRadius: BorderRadius.all(Radius.circular(35))),
               child: GestureDetector(
                 onTap: () => TourvisorService.sendOrder(tourDetails!
@@ -826,7 +823,7 @@ class DdetailsState extends State<HotelDetailsScreen> {
                 child: Container(
                   width: 48,
                   height: 48,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: blueTickColor,
                   child: Row(
                     children: [
                       const SizedBox(

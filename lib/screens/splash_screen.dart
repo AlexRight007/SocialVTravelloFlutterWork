@@ -31,11 +31,16 @@ class _SplashScreenState extends State<SplashScreen> {
     getGeneralSettings();
 
     afterBuildCreated(() {
-      appStore.setLanguage(getStringAsync(SharePreferencesKey.LANGUAGE, defaultValue: Constants.defaultLanguage));
+      appStore.setLanguage(getStringAsync(SharePreferencesKey.LANGUAGE,
+          defaultValue: Constants.defaultLanguage));
 
-      int themeModeIndex = getIntAsync(SharePreferencesKey.APP_THEME, defaultValue: AppThemeMode.ThemeModeSystem);
+      int themeModeIndex = getIntAsync(SharePreferencesKey.APP_THEME,
+          defaultValue: AppThemeMode.ThemeModeSystem);
       if (themeModeIndex == AppThemeMode.ThemeModeSystem) {
-        appStore.toggleDarkMode(value: MediaQuery.of(context).platformBrightness != Brightness.light, isFromMain: true);
+        appStore.toggleDarkMode(
+            value:
+                MediaQuery.of(context).platformBrightness != Brightness.light,
+            isFromMain: true);
       }
     });
 
@@ -47,9 +52,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (widget.activityId != null) {
       if (appStore.isLoggedIn) {
-        SinglePostScreen(postId: widget.activityId.validate()).launch(context, isNewTask: true);
+        SinglePostScreen(postId: widget.activityId.validate())
+            .launch(context, isNewTask: true);
       } else {
-        SignInScreen(activityId: widget.activityId.validate()).launch(context, isNewTask: true);
+        SignInScreen(activityId: widget.activityId.validate())
+            .launch(context, isNewTask: true);
       }
     } else if (appStore.isLoggedIn && !isTokenExpire) {
       DashboardScreen().launch(context, isNewTask: true);
@@ -60,26 +67,28 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> getGeneralSettings() async {
     await generalSettings().then((value) async {
-      appStore.setAuthVerificationEnable(value.isAccountVerificationRequire == 1);
+      appStore
+          .setAuthVerificationEnable(value.isAccountVerificationRequire == 1);
       appStore.setAdsVisibility(value.showAds.validate().getBoolInt());
       appStore.setShopVisibility(value.showShop.validate().getBoolInt());
       appStore.setBlogsVisibility(value.showBlogs.validate().getBoolInt());
-      appStore.setLearnPressVisibility(value.showLearnPress.validate().getBoolInt());
-      appStore.setGamiPressVisibility(value.showGamiPress.validate().getBoolInt());
-      appStore.setMemberShipVisibility(value.showMemberShip.validate().getBoolInt());
-      appStore.setSocialLoginVisibility(value.showSocialLogin.validate().getBoolInt());
+      appStore.setLearnPressVisibility(
+          value.showLearnPress.validate().getBoolInt());
+      appStore
+          .setGamiPressVisibility(value.showGamiPress.validate().getBoolInt());
+      appStore.setMemberShipVisibility(
+          value.showMemberShip.validate().getBoolInt());
+      appStore.setSocialLoginVisibility(
+          value.showSocialLogin.validate().getBoolInt());
       appStore.setForumsVisibility(value.showForums.validate().getBoolInt());
 
       await checkIsAppInReview(value).then((val) {
         if (!getBoolAsync(SharePreferencesKey.HAS_IN_REVIEW)) {
           pmpStore.setPmpEnable(value.showMemberShip.validate().getBoolInt());
-
         }
       });
     }).catchError(onError);
   }
-
-
 
   @override
   void setState(fn) {
@@ -98,13 +107,22 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Image.asset(SPLASH_SCREEN_IMAGE, height: context.height(), width: context.width(), fit: BoxFit.cover),
+          Image.asset(SPLASH_SCREEN_IMAGE,
+              height: context.height(),
+              width: context.width(),
+              fit: BoxFit.cover),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(APP_ICON, height: 50, width: 52, fit: BoxFit.cover, color: Colors.white),
-              8.width,
-              Text(APP_NAME, style: boldTextStyle(color: Colors.white, size: 40)),
+              Image.asset(
+                APP_ICON,
+                height: 120,
+                width: 250,
+                fit: BoxFit.cover,
+                color: Colors.white,
+              ),
+              // 8.width,
+              // Text(APP_NAME, style: boldTextStyle(color: Colors.white, size: 40)),
             ],
           ),
         ],
@@ -112,12 +130,17 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+
 Future<void> checkIsAppInReview(GeneralSettingsModel value) async {
   await setupFirebaseRemoteConfig().then((remoteConfig) async {
     if (isIOS) {
-      await setValue(SharePreferencesKey.HAS_IN_REVIEW, remoteConfig.getBool(SharePreferencesKey.HAS_IN_APP_STORE_REVIEW), print: true);
+      await setValue(SharePreferencesKey.HAS_IN_REVIEW,
+          remoteConfig.getBool(SharePreferencesKey.HAS_IN_APP_STORE_REVIEW),
+          print: true);
     } else if (isAndroid) {
-      await setValue(SharePreferencesKey.HAS_IN_REVIEW, remoteConfig.getBool(SharePreferencesKey.HAS_IN_PLAY_STORE_REVIEW), print: true);
+      await setValue(SharePreferencesKey.HAS_IN_REVIEW,
+          remoteConfig.getBool(SharePreferencesKey.HAS_IN_PLAY_STORE_REVIEW),
+          print: true);
     }
   }).catchError((e) {
     toast(e.toString());

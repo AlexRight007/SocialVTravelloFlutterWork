@@ -65,7 +65,10 @@ class _LocationDropdownWidgetState extends State<LocationDropdownWidget> {
             DropdownButtonHideUnderline(
               child: DropdownButton<int>(
                 value: globalSelectedCityFrom,
-                icon: const SizedBox(),
+                icon: Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  color: context.accentColor,
+                ),
                 onChanged: (int? newValue) {
                   setState(() {
                     globalSelectedCityFrom = newValue!;
@@ -89,13 +92,6 @@ class _LocationDropdownWidgetState extends State<LocationDropdownWidget> {
                 }).toList(),
               ),
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            Icon(
-              Icons.keyboard_arrow_down_rounded,
-              color: context.accentColor,
-            )
           ],
         ),
         Row(

@@ -1951,6 +1951,9 @@ class LanguagePt extends BaseLanguage {
   String get noMembersFound => "Nenhum membro encontrado";
 
   @override
+  String get noDirectionFound => 'Endereços não encontrados';
+
+  @override
   String get groupInvites => "Convites do grupo";
 
   @override

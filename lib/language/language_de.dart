@@ -1962,6 +1962,9 @@ class LanguageDe extends BaseLanguage {
   String get noMembersFound => 'Keine Mitglieder gefunden';
 
   @override
+  String get noDirectionFound => 'Keine Wegbeschreibung gefunden';
+
+  @override
   String get groupInvites => 'Gruppe lädt ein';
 
   @override

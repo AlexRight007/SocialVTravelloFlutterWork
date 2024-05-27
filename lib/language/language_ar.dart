@@ -2012,6 +2012,9 @@ class LanguageAr extends BaseLanguage {
   String get noMembersFound => 'لم يتم العثور على أعضاء';
 
   @override
+  String get noDirectionFound => 'لم يتم العثور على الاتجاهات';
+
+  @override
   String get groupInvites => 'تدعو المجموعة';
 
   @override

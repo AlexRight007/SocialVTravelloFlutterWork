@@ -1950,6 +1950,9 @@ class LanguageEs extends BaseLanguage {
   String get noMembersFound => 'No se encontraron miembros';
 
   @override
+  String get noDirectionFound => 'No se encontraron direcciones';
+
+  @override
   String get groupInvites => 'Invitaciones grupales';
 
   @override

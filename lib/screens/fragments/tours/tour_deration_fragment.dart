@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/components/loading_widget.dart';
+import 'package:socialv/components/no_data_lottie_widget.dart';
+import 'package:socialv/main.dart';
 import 'package:socialv/models/tourvisor/travel_offer_model.dart';
 import 'package:socialv/screens/fragments/tours/explore_item_widget.dart';
 import 'package:socialv/screens/fragments/tours/loaction_dropdown_widgets.dart';
@@ -22,6 +25,7 @@ class TourDerectionFragment extends StatefulWidget {
 
 class _TourDeractionFragment extends State<TourDerectionFragment>
     with TickerProviderStateMixin {
+  bool isLoaded = false;
   late List<TravelOffer> travelOffer = [];
   AnimationController? animationController;
 
@@ -41,10 +45,12 @@ class _TourDeractionFragment extends State<TourDerectionFragment>
 
   Future<void> loadTravelOffer() async {
     try {
+      isLoaded = false;
       final tourvisorService = TourvisorService();
       travelOffer = await tourvisorService.getTravelOffers(
           cityCode: globalSelectedCityFrom);
       setState(() {});
+      isLoaded = true;
     } catch (e) {
       log('Error loading departures: $e');
       // Обработайте ошибку, например, отобразите сообщение об ошибке
@@ -66,7 +72,19 @@ class _TourDeractionFragment extends State<TourDerectionFragment>
             onChanged: (p0) => loadTravelOffer(),
           ), // Используем новый виджет
         ),
-        travelOffer.isNotEmpty ? getPlaces() : const LoadingWidget(),
+        isLoaded
+            ? travelOffer.isNotEmpty
+                ? getPlaces()
+                : Observer(
+                    builder: (_) => SizedBox(
+                      height: context.height() * 0.7,
+                      child: NoDataWidget(
+                        imageWidget: NoDataLottieWidget(),
+                        title: language.noDirectionFound,
+                      ),
+                    ).visible(!appStore.isLoading),
+                  )
+            : const LoadingWidget(),
       ],
     );
   }

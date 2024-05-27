@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="apps.iqonic.design"
+                    android:host="travello.kz"
                     android:pathPrefix="/socialv/"
                     android:scheme="https" />
             </intent-filter>

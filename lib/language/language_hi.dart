@@ -30,7 +30,8 @@ class LanguageHi extends BaseLanguage {
   String get badges => "बैज";
 
   @override
-  String get congratulatesYouAreAchieve => "बधाई हो आप एक उपयोगकर्ता के रूप में ब्रह्मांड को प्राप्त कर रहे हैं।";
+  String get congratulatesYouAreAchieve =>
+      "बधाई हो आप एक उपयोगकर्ता के रूप में ब्रह्मांड को प्राप्त कर रहे हैं।";
 
   @override
   String get youHaveEarnedBadge => "आपने यह बैज अर्जित किया है!";
@@ -53,7 +54,8 @@ class LanguageHi extends BaseLanguage {
   String get free => "मुक्त";
 
   @override
-  String get clickToVisitMyCourses => "मेरे पाठ्यक्रमों पर जाने के लिए यहां क्लिक करें";
+  String get clickToVisitMyCourses =>
+      "मेरे पाठ्यक्रमों पर जाने के लिए यहां क्लिक करें";
 
   @override
   String get discountCode => "डिस्काउंट कोड";
@@ -75,16 +77,19 @@ class LanguageHi extends BaseLanguage {
   String get moreAboutContentSafety => "सामग्री सुरक्षा के बारे में अधिक";
 
   @override
-  String get contentFilterOffText => "सभी प्रासंगिक परिणाम दिखाते हैं, भले ही वे स्पष्ट हों";
+  String get contentFilterOffText =>
+      "सभी प्रासंगिक परिणाम दिखाते हैं, भले ही वे स्पष्ट हों";
 
   @override
-  String get contentFilterText => "स्पष्ट सामग्री को फ़िल्टर करने में मदद करता है";
+  String get contentFilterText =>
+      "स्पष्ट सामग्री को फ़िल्टर करने में मदद करता है";
 
   @override
   String get filter => "फ़िल्टर";
 
   @override
-  String get contentSafetyText => "यह आपको अपनी पोस्ट सामग्री, टिप्पणियों, संदेशों और मंचों में स्पष्ट सामग्री, बुरे शब्दों की तरह स्पष्ट सामग्री का प्रबंधन करने में मदद करेगा।";
+  String get contentSafetyText =>
+      "यह आपको अपनी पोस्ट सामग्री, टिप्पणियों, संदेशों और मंचों में स्पष्ट सामग्री, बुरे शब्दों की तरह स्पष्ट सामग्री का प्रबंधन करने में मदद करेगा।";
 
   @override
   String get contentSafety => "सामग्री सुरक्षा";
@@ -111,7 +116,8 @@ class LanguageHi extends BaseLanguage {
   String get selectAndProceed => 'चयन करें और आगे बढ़ें';
 
   @override
-  String get noteLongPressOn => 'नोट: इसके विवरण और अनुमत कार्यों को देखने के लिए योजना पर लॉन्ग प्रेस';
+  String get noteLongPressOn =>
+      'नोट: इसके विवरण और अनुमत कार्यों को देखने के लिए योजना पर लॉन्ग प्रेस';
 
   @override
   String get groupCreation => 'समूह निर्माण';
@@ -147,7 +153,8 @@ class LanguageHi extends BaseLanguage {
   String get enterLink => 'लिंक दर्ज करें';
 
   @override
-  String get accountActivatedText => "आपका खाता सफलतापूर्वक सक्रिय हो गया था! अब आप उस उपयोगकर्ता नाम और पासवर्ड के साथ लॉग इन कर सकते हैं जब आपने साइन अप किया था।";
+  String get accountActivatedText =>
+      "आपका खाता सफलतापूर्वक सक्रिय हो गया था! अब आप उस उपयोगकर्ता नाम और पासवर्ड के साथ लॉग इन कर सकते हैं जब आपने साइन अप किया था।";
 
   @override
   String get yourAccountIsNowActive => "आपका खाता अब सक्रिय है!";
@@ -189,7 +196,8 @@ class LanguageHi extends BaseLanguage {
   String get viewAllMembershipOptions => 'सभी सदस्यता विकल्प देखें';
 
   @override
-  String get noMembershipText => 'आपके पास सक्रिय सदस्यता नहीं है। एक सदस्यता स्तर चुनें।';
+  String get noMembershipText =>
+      'आपके पास सक्रिय सदस्यता नहीं है। एक सदस्यता स्तर चुनें।';
 
   @override
   String get validTill => 'तक मान्य:';
@@ -207,10 +215,12 @@ class LanguageHi extends BaseLanguage {
   String get yourMembershipCancelled => 'आपकी सदस्यता रद्द कर दी गई है।';
 
   @override
-  String get clickHereToVisitHomePage => 'होम पेज पर जाने के लिए यहां क्लिक करें';
+  String get clickHereToVisitHomePage =>
+      'होम पेज पर जाने के लिए यहां क्लिक करें';
 
   @override
-  String get cancelMembershipConfirmation => 'क्या आप सुनिश्चित हैं कि आप अपनी प्रीमियम सदस्यता रद्द करना चाहते हैं?';
+  String get cancelMembershipConfirmation =>
+      'क्या आप सुनिश्चित हैं कि आप अपनी प्रीमियम सदस्यता रद्द करना चाहते हैं?';
 
   @override
   String get yesCancelThisMembership => 'हां, इस सदस्यता को रद्द करें';
@@ -234,7 +244,8 @@ class LanguageHi extends BaseLanguage {
   String get pastInvoices => 'अतीत चालान';
 
   @override
-  String get startACommunity => 'एक ऐसा समुदाय शुरू करें जो कनेक्शन को बढ़ावा देता है और विकास को बढ़ावा देता है।';
+  String get startACommunity =>
+      'एक ऐसा समुदाय शुरू करें जो कनेक्शन को बढ़ावा देता है और विकास को बढ़ावा देता है।';
 
   @override
   String get activate => 'सक्रिय';
@@ -252,7 +263,8 @@ class LanguageHi extends BaseLanguage {
   String get sentOTPText => 'हमने आपके मोबाइल नंबर पर 6 अंकों का कोड भेजा है।';
 
   @override
-  String get completeYourProfileText => 'नीचे दिए गए वैध विवरणों को भरकर अपनी प्रोफ़ाइल को पूरा करें और लॉगिन करें।';
+  String get completeYourProfileText =>
+      'नीचे दिए गए वैध विवरणों को भरकर अपनी प्रोफ़ाइल को पूरा करें और लॉगिन करें।';
 
   @override
   String get completeProfile => 'पूर्ण प्रोफ़ाइल';
@@ -261,7 +273,8 @@ class LanguageHi extends BaseLanguage {
   String get verified => 'सत्यापित';
 
   @override
-  String get invalidCodeText => 'दर्ज किया गया कोड अमान्य है, कृपया पुनः प्रयास करें';
+  String get invalidCodeText =>
+      'दर्ज किया गया कोड अमान्य है, कृपया पुनः प्रयास करें';
 
   @override
   String get otpCodeIsSent => 'OTP कोड आपके मोबाइल नंबर पर भेजा जाता है';
@@ -282,7 +295,8 @@ class LanguageHi extends BaseLanguage {
   String get removeCustomWallpaper => 'कस्टम वॉलपेपर निकालें';
 
   @override
-  String get removeWallpaperConfirmation => 'क्या आप सुनिश्चित हैं कि आप कस्टम वॉलपेपर को हटाना चाहते हैं?';
+  String get removeWallpaperConfirmation =>
+      'क्या आप सुनिश्चित हैं कि आप कस्टम वॉलपेपर को हटाना चाहते हैं?';
 
   @override
   String get today => 'आज';
@@ -324,10 +338,12 @@ class LanguageHi extends BaseLanguage {
   String get completeTheActivationText => 'अपने खाते की सक्रियता को पूरा करें';
 
   @override
-  String get deleteCommentConfirmation => "क्या आप सुनिश्चित हैं कि क्या आप इस टिप्पणी को हटाना चाहते हैं?";
+  String get deleteCommentConfirmation =>
+      "क्या आप सुनिश्चित हैं कि क्या आप इस टिप्पणी को हटाना चाहते हैं?";
 
   @override
-  String get protectedPostText => "यह सामग्री पासवर्ड संरक्षित है। इसे देखने के लिए कृपया अपना पासवर्ड नीचे दर्ज करें:";
+  String get protectedPostText =>
+      "यह सामग्री पासवर्ड संरक्षित है। इसे देखने के लिए कृपया अपना पासवर्ड नीचे दर्ज करें:";
 
   @override
   String get courseOrders => "पाठ्यक्रम आदेश";
@@ -360,7 +376,8 @@ class LanguageHi extends BaseLanguage {
   String get sendInvitation => "निमंत्रण भेजना";
 
   @override
-  String get addAPersonalizedMessage => "निमंत्रण में एक व्यक्तिगत संदेश जोड़ें (वैकल्पिक)";
+  String get addAPersonalizedMessage =>
+      "निमंत्रण में एक व्यक्तिगत संदेश जोड़ें (वैकल्पिक)";
 
   @override
   String get emailAddressOfNewUser => "नए उपयोगकर्ता का ईमेल पता";
@@ -370,7 +387,8 @@ class LanguageHi extends BaseLanguage {
       "इस साइट में शामिल होने के लिए एक नए उपयोगकर्ता को आमंत्रित करने के लिए नीचे दिए गए फ़ॉर्म को भरें। फॉर्म जमा करने पर, एक ईमेल इनविट को भेजा जाएगा जिसमें आपके निमंत्रण को स्वीकार करने के लिए एक लिंक होगा। आप ईमेल में एक कस्टम संदेश भी जोड़ सकते हैं।";
 
   @override
-  String get cancelInviteRequest => "क्या आप सुनिश्चित हैं कि आप इस आमंत्रण अनुरोध को रद्द करना चाहते हैं?";
+  String get cancelInviteRequest =>
+      "क्या आप सुनिश्चित हैं कि आप इस आमंत्रण अनुरोध को रद्द करना चाहते हैं?";
 
   @override
   String get resendInvitation => "आमंत्रण पुनः भेजें";
@@ -394,13 +412,15 @@ class LanguageHi extends BaseLanguage {
   String get newConversationText => 'बातचीत शुरू करने के लिए एक संदेश लिखें';
 
   @override
-  String get listOfUsersBlocked => 'यह उन उपयोगकर्ताओं की एक सूची है जिन्हें आपने अवरुद्ध कर दिया है। आप उन्हें नीचे ब्लॉकलिस्ट से अनब्लॉक कर सकते हैं।';
+  String get listOfUsersBlocked =>
+      'यह उन उपयोगकर्ताओं की एक सूची है जिन्हें आपने अवरुद्ध कर दिया है। आप उन्हें नीचे ब्लॉकलिस्ट से अनब्लॉक कर सकते हैं।';
 
   @override
   String get youHaventBlockedText => 'आपने अभी तक किसी को अवरुद्ध नहीं किया है';
 
   @override
-  String get enableInviteConversation => 'सक्षम होने पर, वार्तालाप प्रतिभागी अन्य उपयोगकर्ताओं को बातचीत में जोड़ने में सक्षम होंगे।';
+  String get enableInviteConversation =>
+      'सक्षम होने पर, वार्तालाप प्रतिभागी अन्य उपयोगकर्ताओं को बातचीत में जोड़ने में सक्षम होंगे।';
 
   @override
   String get kickParticipant => 'किक प्रतिभागी';
@@ -430,7 +450,8 @@ class LanguageHi extends BaseLanguage {
   String get starredMessages => 'तारांकित संदेश';
 
   @override
-  String get youCanTSendMessage => 'आप उन उपयोगकर्ता को संदेश भेज सकते हैं जो आपके द्वारा अवरुद्ध था';
+  String get youCanTSendMessage =>
+      'आप उन उपयोगकर्ता को संदेश भेज सकते हैं जो आपके द्वारा अवरुद्ध था';
 
   @override
   String get conversations => 'बात चिट';
@@ -463,7 +484,8 @@ class LanguageHi extends BaseLanguage {
   String get addParticipants => 'प्रतिभागियों को जोड़ें';
 
   @override
-  String get addParticipantText => 'एक नया प्रतिभागी जोड़ें और नए दृष्टिकोण को अनलॉक करें।';
+  String get addParticipantText =>
+      'एक नया प्रतिभागी जोड़ें और नए दृष्टिकोण को अनलॉक करें।';
 
   @override
   String get editMessage => 'संदेश संपादित करें';
@@ -502,7 +524,8 @@ class LanguageHi extends BaseLanguage {
   String get viewParticipants => 'प्रतिभागियों को देखें';
 
   @override
-  String get deleteChatConfirmation => 'क्या आप सुनिश्चित हैं कि क्या आप इस चैट को हटाना चाहते हैं?';
+  String get deleteChatConfirmation =>
+      'क्या आप सुनिश्चित हैं कि क्या आप इस चैट को हटाना चाहते हैं?';
 
   @override
   String get messageHidden => 'संदेश छिपा हुआ';
@@ -514,10 +537,12 @@ class LanguageHi extends BaseLanguage {
   String get onYourComment => "आपकी टिप्पणी पर";
 
   @override
-  String get removeCouponConfirmation => "क्या आप सुनिश्चित हैं कि आप इस कूपन को हटाना चाहते हैं?";
+  String get removeCouponConfirmation =>
+      "क्या आप सुनिश्चित हैं कि आप इस कूपन को हटाना चाहते हैं?";
 
   @override
-  String get removeMediaConfirmation => "क्या आप सुनिश्चित हैं कि आप इस मीडिया को हटाना चाहते हैं?";
+  String get removeMediaConfirmation =>
+      "क्या आप सुनिश्चित हैं कि आप इस मीडिया को हटाना चाहते हैं?";
 
   @override
   String get reactedBy => "द्वारा प्रतिक्रिया की गई";
@@ -619,7 +644,8 @@ class LanguageHi extends BaseLanguage {
   String get orderId => 'आदेश कामतत्व';
 
   @override
-  String get completeLessonConfirmation => 'क्या आप सुनिश्चित हैं कि आप इस पाठ को पूरा करना चाहते हैं?';
+  String get completeLessonConfirmation =>
+      'क्या आप सुनिश्चित हैं कि आप इस पाठ को पूरा करना चाहते हैं?';
 
   @override
   String get complete => 'पूरा';
@@ -640,7 +666,8 @@ class LanguageHi extends BaseLanguage {
   String get myCourses => 'मेरे पाठ्यक्रम';
 
   @override
-  String get finishCourseConfirmation => 'क्या आप सुनिश्चित हैं कि आप इस कोर्स को पूरा करना चाहते हैं?';
+  String get finishCourseConfirmation =>
+      'क्या आप सुनिश्चित हैं कि आप इस कोर्स को पूरा करना चाहते हैं?';
 
   @override
   String get finishCourse => 'फिनिश कोर्स';
@@ -685,7 +712,8 @@ class LanguageHi extends BaseLanguage {
   String get enjoyLearning => 'सीखने का आनंद लें !!';
 
   @override
-  String get congratulationsYouHavSuccessfully => 'बधाई हो कि आपने इस पाठ्यक्रम को सफलतापूर्वक नामांकित किया।';
+  String get congratulationsYouHavSuccessfully =>
+      'बधाई हो कि आपने इस पाठ्यक्रम को सफलतापूर्वक नामांकित किया।';
 
   @override
   String get prev => 'पिछला';
@@ -700,7 +728,8 @@ class LanguageHi extends BaseLanguage {
   String get incorrect => 'ग़लत';
 
   @override
-  String get thisContentIsProtected => 'यह सामग्री संरक्षित है। कृपया इस सामग्री को देखने के लिए पाठ्यक्रम में दाखिला लें!';
+  String get thisContentIsProtected =>
+      'यह सामग्री संरक्षित है। कृपया इस सामग्री को देखने के लिए पाठ्यक्रम में दाखिला लें!';
 
   @override
   String get result => 'परिणाम';
@@ -817,7 +846,8 @@ class LanguageHi extends BaseLanguage {
   String get deletePermanently => 'स्थायी रूप से मिटाएं';
 
   @override
-  String get trashConfirmationText => 'क्या आप सुनिश्चित हैं कि आप इस कहानी को कचरा करने के लिए स्थानांतरित करना चाहते हैं?';
+  String get trashConfirmationText =>
+      'क्या आप सुनिश्चित हैं कि आप इस कहानी को कचरा करने के लिए स्थानांतरित करना चाहते हैं?';
 
   @override
   String get moveToTrash => 'ट्रैश में ले जाएं';
@@ -829,37 +859,47 @@ class LanguageHi extends BaseLanguage {
   String get productDetails => 'उत्पाद विवरण';
 
   @override
-  String get followThisAccountText => 'उनके पोस्ट और अन्य विवरण देखने के लिए इस खाते का पालन करें';
+  String get followThisAccountText =>
+      'उनके पोस्ट और अन्य विवरण देखने के लिए इस खाते का पालन करें';
 
   @override
   String get thisAccountIsPrivate => 'यह खाता निजी है';
 
   @override
-  String get createGroupHiddenC => "समूह सामग्री और गतिविधि केवल समूह के सदस्यों को दिखाई देगी।";
+  String get createGroupHiddenC =>
+      "समूह सामग्री और गतिविधि केवल समूह के सदस्यों को दिखाई देगी।";
 
   @override
-  String get createGroupHiddenB => "यह समूह समूह निर्देशिका या खोज परिणामों में सूचीबद्ध नहीं किया जाएगा।";
+  String get createGroupHiddenB =>
+      "यह समूह समूह निर्देशिका या खोज परिणामों में सूचीबद्ध नहीं किया जाएगा।";
 
   @override
-  String get createGroupHiddenA => "केवल उपयोगकर्ता जो आमंत्रित किए जाते हैं, वे समूह में शामिल हो सकते हैं।";
+  String get createGroupHiddenA =>
+      "केवल उपयोगकर्ता जो आमंत्रित किए जाते हैं, वे समूह में शामिल हो सकते हैं।";
 
   @override
-  String get createGroupPrivateC => "समूह सामग्री और गतिविधि केवल समूह के सदस्यों को दिखाई देगी।";
+  String get createGroupPrivateC =>
+      "समूह सामग्री और गतिविधि केवल समूह के सदस्यों को दिखाई देगी।";
 
   @override
-  String get createGroupPrivateB => "यह समूह समूह निर्देशिका और खोज परिणामों में सूचीबद्ध किया जाएगा।";
+  String get createGroupPrivateB =>
+      "यह समूह समूह निर्देशिका और खोज परिणामों में सूचीबद्ध किया जाएगा।";
 
   @override
-  String get createGroupPrivateA => "केवल वे लोग जो सदस्यता का अनुरोध करते हैं और स्वीकार किए जाते हैं, वे समूह में शामिल हो सकते हैं।";
+  String get createGroupPrivateA =>
+      "केवल वे लोग जो सदस्यता का अनुरोध करते हैं और स्वीकार किए जाते हैं, वे समूह में शामिल हो सकते हैं।";
 
   @override
-  String get createGroupPublicC => "समूह सामग्री और गतिविधि किसी भी साइट सदस्य को दिखाई देगी।";
+  String get createGroupPublicC =>
+      "समूह सामग्री और गतिविधि किसी भी साइट सदस्य को दिखाई देगी।";
 
   @override
-  String get createGroupPublicB => "यह समूह समूह निर्देशिका और खोज परिणामों में सूचीबद्ध किया जाएगा।";
+  String get createGroupPublicB =>
+      "यह समूह समूह निर्देशिका और खोज परिणामों में सूचीबद्ध किया जाएगा।";
 
   @override
-  String get createGroupPublicA => "कोई भी साइट सदस्य इस समूह में शामिल हो सकता है।";
+  String get createGroupPublicA =>
+      "कोई भी साइट सदस्य इस समूह में शामिल हो सकता है।";
 
   @override
   String get year => "वर्ष";
@@ -958,10 +998,12 @@ class LanguageHi extends BaseLanguage {
   String get cancelOrderMessageSix => "गलती द्वारा रखा गया आदेश";
 
   @override
-  String get cancelOrderMessageFive => "उत्पाद का आदेश देने के बाद दोस्तों/रिश्तेदारों से खराब समीक्षा।";
+  String get cancelOrderMessageFive =>
+      "उत्पाद का आदेश देने के बाद दोस्तों/रिश्तेदारों से खराब समीक्षा।";
 
   @override
-  String get cancelOrderMessageFour => "बिक्री/छूट के कारण उत्पाद की कीमत गिर गई है और ग्राहक इसे कम कीमत पर प्राप्त करना चाहता है";
+  String get cancelOrderMessageFour =>
+      "बिक्री/छूट के कारण उत्पाद की कीमत गिर गई है और ग्राहक इसे कम कीमत पर प्राप्त करना चाहता है";
 
   @override
   String get cancelOrderMessageThree => "कम कीमत के लिए उपलब्ध सस्ता वैकल्पिक";
@@ -985,7 +1027,8 @@ class LanguageHi extends BaseLanguage {
   String get yes => "हां";
 
   @override
-  String get deleteOrderConfirmation => "क्या आप सुनिश्चित हैं कि आप इस आदेश को कचरा करने के लिए स्थानांतरित करना चाहते हैं?";
+  String get deleteOrderConfirmation =>
+      "क्या आप सुनिश्चित हैं कि आप इस आदेश को कचरा करने के लिए स्थानांतरित करना चाहते हैं?";
 
   @override
   String get orderDeletedSuccessfully => "आदेश सफलतापूर्वक हटा दिया गया";
@@ -997,7 +1040,8 @@ class LanguageHi extends BaseLanguage {
   String get cancelOrder => "आदेश रद्द";
 
   @override
-  String get hiddenPostText => "यह पोस्ट छिपी हुई है। अब आपको इस पोस्ट को न्यूज़फ़ीड में नहीं मिलेगा।";
+  String get hiddenPostText =>
+      "यह पोस्ट छिपी हुई है। अब आपको इस पोस्ट को न्यूज़फ़ीड में नहीं मिलेगा।";
 
   @override
   String get reasonForCancellation => "आदेश रद्द करने का कारण";
@@ -1045,7 +1089,8 @@ class LanguageHi extends BaseLanguage {
   String get avatarUpdatedSuccessfully => "अवतार छवि सफलतापूर्वक अपडेट की गई";
 
   @override
-  String get coverUpdatedSuccessfully => "कवर छवि को सफलतापूर्वक अपडेट किया गया";
+  String get coverUpdatedSuccessfully =>
+      "कवर छवि को सफलतापूर्वक अपडेट किया गया";
 
   @override
   String get groupUpdatedSuccessfully => "समूह को सफलतापूर्वक अपडेट किया गया";
@@ -1057,7 +1102,8 @@ class LanguageHi extends BaseLanguage {
   String get viewGroup => "दृश्य समूह";
 
   @override
-  String get notePleaseAddComma => "नोट: कृपया टैग की अल्पविराम अलग सूची जोड़ें";
+  String get notePleaseAddComma =>
+      "नोट: कृपया टैग की अल्पविराम अलग सूची जोड़ें";
 
   @override
   String get registeredSuccessfully => "सफलतापूर्वक पंजीकृत";
@@ -1066,7 +1112,8 @@ class LanguageHi extends BaseLanguage {
   String get requestVerification => "अनुरोध सत्यापन";
 
   @override
-  String get verificationRequestRejectedText => "क्षमा करें आपका सत्यापन अनुरोध अस्वीकार कर दिया गया है।";
+  String get verificationRequestRejectedText =>
+      "क्षमा करें आपका सत्यापन अनुरोध अस्वीकार कर दिया गया है।";
 
   @override
   String get yourAccountIsVerifiedNow => "आपका खाता अब सत्यापित है।";
@@ -1096,7 +1143,8 @@ class LanguageHi extends BaseLanguage {
   String get tags => "टैग";
 
   @override
-  String get notesAboutYourOrder => "आपके आदेश के बारे में नोट्स, उदा। वितरण के लिए विशेष नोट्स";
+  String get notesAboutYourOrder =>
+      "आपके आदेश के बारे में नोट्स, उदा। वितरण के लिए विशेष नोट्स";
 
   @override
   String get optional => "वैकल्पिक";
@@ -1111,7 +1159,8 @@ class LanguageHi extends BaseLanguage {
   String get groupForum => 'समूह मंच';
 
   @override
-  String get groupAsForumText => 'इस समूह के सदस्यों को एक संरचित, बुलेटिन-बोर्ड स्टाइल फैशन में संवाद करने की अनुमति देने के लिए एक चर्चा मंच बनाएं।';
+  String get groupAsForumText =>
+      'इस समूह के सदस्यों को एक संरचित, बुलेटिन-बोर्ड स्टाइल फैशन में संवाद करने की अनुमति देने के लिए एक चर्चा मंच बनाएं।';
 
   @override
   String get wantGroupAsForum => 'हाँ। मैं चाहता हूं कि इस समूह में एक मंच हो।';
@@ -1165,7 +1214,8 @@ class LanguageHi extends BaseLanguage {
   String get topicTags => 'विषय टैग';
 
   @override
-  String get notifyMeText => 'मुझे ईमेल के माध्यम से अनुवर्ती उत्तरों की सूचना दें';
+  String get notifyMeText =>
+      'मुझे ईमेल के माध्यम से अनुवर्ती उत्तरों की सूचना दें';
 
   @override
   String get replyTo => 'को उत्तर';
@@ -1280,7 +1330,8 @@ class LanguageHi extends BaseLanguage {
   String get orderCancelledSuccessfully => 'आदेश सफलतापूर्वक रद्द कर दिया गया';
 
   @override
-  String get cancelOrderConfirmation => 'क्या आप सुनिश्चित हैं कि आप इस आदेश को रद्द करना चाहते हैं?';
+  String get cancelOrderConfirmation =>
+      'क्या आप सुनिश्चित हैं कि आप इस आदेश को रद्द करना चाहते हैं?';
 
   @override
   String get orderStatus => 'आदेश की स्थिति';
@@ -1331,13 +1382,15 @@ class LanguageHi extends BaseLanguage {
   String get writeReview => 'आपकी समीक्षा';
 
   @override
-  String get reviewUpdatedSuccessfully => 'सफलतापूर्वक अपडेट की गई समीक्षा करें';
+  String get reviewUpdatedSuccessfully =>
+      'सफलतापूर्वक अपडेट की गई समीक्षा करें';
 
   @override
   String get reviewDeletedSuccessfully => 'सफलतापूर्वक हटाए गए समीक्षा';
 
   @override
-  String get deleteReviewConfirmation => 'क्या आप इस समीक्षा को मिटाना चाहते हैं?';
+  String get deleteReviewConfirmation =>
+      'क्या आप इस समीक्षा को मिटाना चाहते हैं?';
 
   @override
   String get yourCartIsCurrentlyEmpty => 'फिलहाल आपका कार्ट खाली है।';
@@ -1352,7 +1405,8 @@ class LanguageHi extends BaseLanguage {
   String get itemRemovedSuccessfully => 'आइटम को सफलतापूर्वक हटा दिया गया';
 
   @override
-  String get removeFromCartConfirmation => 'क्या आप सुनिश्चित हैं कि आप इस आइटम को कार्ट से हटाना चाहते हैं?';
+  String get removeFromCartConfirmation =>
+      'क्या आप सुनिश्चित हैं कि आप इस आइटम को कार्ट से हटाना चाहते हैं?';
 
   @override
   String get appliedCoupons => 'लागू कूपन';
@@ -1454,7 +1508,8 @@ class LanguageHi extends BaseLanguage {
   String get myOrders => 'मेरे आदेश';
 
   @override
-  String get addStoryText => 'कहानियों के साथ अपनी रचनात्मकता को धक्का दें और अपने क्षणों को अपने सर्कल के साथ दिखाएं।';
+  String get addStoryText =>
+      'कहानियों के साथ अपनी रचनात्मकता को धक्का दें और अपने क्षणों को अपने सर्कल के साथ दिखाएं।';
 
   @override
   String get setStoryDuration => 'कहानी की अवधि निर्धारित करें';
@@ -1466,7 +1521,8 @@ class LanguageHi extends BaseLanguage {
   String get addYourStory => 'अपनी कहानी जोड़ें';
 
   @override
-  String get deleteStoryConfirmation => 'तुम पक्का हो कि तुम इस कहानी को मिटाना चाहते हो?';
+  String get deleteStoryConfirmation =>
+      'तुम पक्का हो कि तुम इस कहानी को मिटाना चाहते हो?';
 
   @override
   String get viewedBy => 'द्वारा देखा गया';
@@ -1502,7 +1558,8 @@ class LanguageHi extends BaseLanguage {
   String get report => 'रिपोर्ट';
 
   @override
-  String get blockText => 'उन्होंने सोशलव पर आपकी प्रोफ़ाइल, पोस्ट या कहानी खोजने में सक्षम नहीं किया। उन्होंने यह नहीं बताया कि आपने उन्हें ब्लॉक कर दिया है।';
+  String get blockText =>
+      'उन्होंने सोशलव पर आपकी प्रोफ़ाइल, पोस्ट या कहानी खोजने में सक्षम नहीं किया। उन्होंने यह नहीं बताया कि आपने उन्हें ब्लॉक कर दिया है।';
 
   @override
   String get block => 'अवरोध पैदा करना';
@@ -1524,10 +1581,12 @@ class LanguageHi extends BaseLanguage {
   String get reportPortText => 'पोस्ट को हटा सकते हैं।';
 
   @override
-  String get reportAccountText => 'रिपोर्ट किए गए खाते/पोस्ट को निलंबित या निष्क्रिय कर सकते हैं।';
+  String get reportAccountText =>
+      'रिपोर्ट किए गए खाते/पोस्ट को निलंबित या निष्क्रिय कर सकते हैं।';
 
   @override
-  String get reportText => 'साइट व्यवस्थापक के लिए अनुचित, अपमानजनक, या अन्यथा अस्वीकार्य व्यवहार। प्रशासक रिपोर्ट को बैकएंड में देख सकते हैं और';
+  String get reportText =>
+      'साइट व्यवस्थापक के लिए अनुचित, अपमानजनक, या अन्यथा अस्वीकार्य व्यवहार। प्रशासक रिपोर्ट को बैकएंड में देख सकते हैं और';
 
   @override
   String get whatAreYouReportingFor => 'आप इसके लिए क्या रिपोर्ट कर रहे हैं?';
@@ -1542,13 +1601,15 @@ class LanguageHi extends BaseLanguage {
   String get addFriends => "मित्र बनाओ";
 
   @override
-  String get initialHomeText => "वास्तविक सामाजिक संपर्क होने से कभी -कभी मुश्किल मज़ेदार हो सकती है, सब कुछ बहुत सरल हो जाता है!";
+  String get initialHomeText =>
+      "वास्तविक सामाजिक संपर्क होने से कभी -कभी मुश्किल मज़ेदार हो सकती है, सब कुछ बहुत सरल हो जाता है!";
 
   @override
   String get manageAccount => "खाते का प्रबंधन करें";
 
   @override
-  String get deleteAccountConfirmation => "क्या आप इस खाते को हटाने के लिए सुनिश्चित हैं?";
+  String get deleteAccountConfirmation =>
+      "क्या आप इस खाते को हटाने के लिए सुनिश्चित हैं?";
 
   @override
   String get deleteAccount => "खाता हटा दो";
@@ -1557,10 +1618,12 @@ class LanguageHi extends BaseLanguage {
   String get demoUserText => "डेमो उपयोगकर्ता इस कार्रवाई को नहीं कर सकता है";
 
   @override
-  String get deleteNotificationConfirmation => "क्या आप सुनिश्चित हैं कि आप इस अधिसूचना को हटाना चाहते हैं?";
+  String get deleteNotificationConfirmation =>
+      "क्या आप सुनिश्चित हैं कि आप इस अधिसूचना को हटाना चाहते हैं?";
 
   @override
-  String get leaveGroupConfirmation => "क्या आप सुनिश्चित हैं कि आप इस समूह को छोड़ना चाहते हैं?";
+  String get leaveGroupConfirmation =>
+      "क्या आप सुनिश्चित हैं कि आप इस समूह को छोड़ना चाहते हैं?";
 
   @override
   String get appSetting => "ऐप सेटिंग";
@@ -1635,7 +1698,8 @@ class LanguageHi extends BaseLanguage {
   String get forgetPassword => "पासवर्ड भूल गया";
 
   @override
-  String get enterTheEmailAssociated => "रीसेट पासवर्ड मेल प्राप्त करने के लिए अपने \ n खाते से जुड़े ईमेल को दर्ज करें";
+  String get enterTheEmailAssociated =>
+      "रीसेट पासवर्ड मेल प्राप्त करने के लिए अपने \ n खाते से जुड़े ईमेल को दर्ज करें";
 
   @override
   String get enterYourEmail => "अपना ईमेल दर्ज करें";
@@ -1764,7 +1828,8 @@ class LanguageHi extends BaseLanguage {
   String get thisIsAPrivate => 'यह एक निजी समूह है';
 
   @override
-  String get groupCreatedSuccessfully => 'समूह ने सफलतापूर्वक बनायासमूह ने सफलतापूर्वक बनाया';
+  String get groupCreatedSuccessfully =>
+      'समूह ने सफलतापूर्वक बनायासमूह ने सफलतापूर्वक बनाया';
 
   @override
   String get pleaseEnterGroupName => 'कृपया समूह नाम दर्ज करें';
@@ -1809,7 +1874,8 @@ class LanguageHi extends BaseLanguage {
   String get requested => 'का अनुरोध किया';
 
   @override
-  String get shereIsSome => 'क्षमा करें, समूह में शामिल होने के लिए कुछ मुद्दा है';
+  String get shereIsSome =>
+      'क्षमा करें, समूह में शामिल होने के लिए कुछ मुद्दा है';
 
   @override
   String get makeGroupAdmin => 'समूह व्यवस्थापक बनाओ';
@@ -1845,13 +1911,15 @@ class LanguageHi extends BaseLanguage {
   String get update => 'अद्यतन';
 
   @override
-  String get profileUpdatedSuccessfully => 'प्रोफाइल को सफलतापूर्वक अपडेट किया गया';
+  String get profileUpdatedSuccessfully =>
+      'प्रोफाइल को सफलतापूर्वक अपडेट किया गया';
 
   @override
   String get inviteUsers => 'उपयोगकर्ताओं को आमंत्रित करें';
 
   @override
-  String get cShowGroupMembers => 'समूह के सदस्यों को दिखाने के लिए कर सकते हैं';
+  String get cShowGroupMembers =>
+      'समूह के सदस्यों को दिखाने के लिए कर सकते हैं';
 
   @override
   String get groupMembers => 'समूह के सदस्य';
@@ -1864,6 +1932,9 @@ class LanguageHi extends BaseLanguage {
 
   @override
   String get noMembersFound => 'कोई सदस्य नहीं मिला';
+
+  @override
+  String get noDirectionFound => 'कोई दिशा-निर्देश नहीं मिला';
 
   @override
   String get groupInvites => 'समूह आमंत्रण';
@@ -1968,7 +2039,8 @@ class LanguageHi extends BaseLanguage {
   String get decline => 'पतन';
 
   @override
-  String get noFriendshipRequestReceived => 'कोई दोस्ती अनुरोध प्राप्त नहीं हुआ';
+  String get noFriendshipRequestReceived =>
+      'कोई दोस्ती अनुरोध प्राप्त नहीं हुआ';
 
   @override
   String get editProfile => 'प्रोफ़ाइल संपादित करें';
@@ -2070,13 +2142,15 @@ class LanguageHi extends BaseLanguage {
   String get noMembersFoundTo => 'कोई भी सदस्य आमंत्रित नहीं मिला';
 
   @override
-  String get profilePictureUpdatedSuccessfully => "प्रोफ़ाइल चित्र सफलतापूर्वक अपडेट किया गया";
+  String get profilePictureUpdatedSuccessfully =>
+      "प्रोफ़ाइल चित्र सफलतापूर्वक अपडेट किया गया";
 
   @override
   String get areYouSureUnfriend => "प्रोफ़ाइल चित्र सफलतापूर्वक हटा दिया गया";
 
   @override
-  String get removeGroupMemberConfirmation => "क्या आप सुनिश्चित हैं कि आप इस सदस्य को समूह से हटाना चाहते हैं?";
+  String get removeGroupMemberConfirmation =>
+      "क्या आप सुनिश्चित हैं कि आप इस सदस्य को समूह से हटाना चाहते हैं?";
 
   @override
   String get profilePictureRemovedSuccessfully => "हटाना";
@@ -2091,13 +2165,15 @@ class LanguageHi extends BaseLanguage {
   String get member => "सदस्य";
 
   @override
-  String get promotedToAdmin => "आपको समूह में एक व्यवस्थापक के रूप में पदोन्नत किया गया था";
+  String get promotedToAdmin =>
+      "आपको समूह में एक व्यवस्थापक के रूप में पदोन्नत किया गया था";
 
   @override
   String get noDataFound => "कोई डेटा नहीं मिला";
 
   @override
-  String get youHaveGroupInvite => 'आपने इस समूह में शामिल होने के लिए आमंत्रित किया है';
+  String get youHaveGroupInvite =>
+      'आपने इस समूह में शामिल होने के लिए आमंत्रित किया है';
 
   @override
   String get canNotViewPost => 'पोस्ट नहीं देख सकते';
@@ -2115,7 +2191,8 @@ class LanguageHi extends BaseLanguage {
   String get postDeleted => 'पोस्ट को सफलतापूर्वक हटा दिया गया';
 
   @override
-  String get deletePostConfirmation => 'क्या आप इस पोस्ट को डिलीट करना चाहते हैं?';
+  String get deletePostConfirmation =>
+      'क्या आप इस पोस्ट को डिलीट करना चाहते हैं?';
 
   @override
   String get deletePost => 'पोस्ट को हटाएं';
@@ -2148,7 +2225,8 @@ class LanguageHi extends BaseLanguage {
   String get email => 'ईमेल';
 
   @override
-  String get confirmPasswordError => 'पासवर्ड की पुष्टि करें नए पासवर्ड के समान नहीं है';
+  String get confirmPasswordError =>
+      'पासवर्ड की पुष्टि करें नए पासवर्ड के समान नहीं है';
 
   @override
   String get enterValidDetails => 'कृपया मान्य विवरण दर्ज करें';
@@ -2157,7 +2235,8 @@ class LanguageHi extends BaseLanguage {
   String get enterValidUrl => 'कृपया मान्य URL लिंक दर्ज करें';
 
   @override
-  String get addPostContent => 'कृपया अपनी पोस्ट प्रकाशित करने के लिए कुछ सामग्री जोड़ें।';
+  String get addPostContent =>
+      'कृपया अपनी पोस्ट प्रकाशित करने के लिए कुछ सामग्री जोड़ें।';
 
   @override
   String get myStories => 'मेरी कहानियाँ';
@@ -2175,10 +2254,12 @@ class LanguageHi extends BaseLanguage {
   String get promoteToMod => "मोड को बढ़ावा देना";
 
   @override
-  String get enableGalleryCheckBoxText => "हाँ। मैं चाहता हूं कि इस समूह में एक गैलरी हो";
+  String get enableGalleryCheckBoxText =>
+      "हाँ। मैं चाहता हूं कि इस समूह में एक गैलरी हो";
 
   @override
-  String get enableGallerySubtitle => "अपनी रचनात्मकता को जीवन में लाएं और हमारे प्लेटफॉर्म पर गैलरी सुविधा को सक्षम करके इसे दुनिया में प्रदर्शित करें।";
+  String get enableGallerySubtitle =>
+      "अपनी रचनात्मकता को जीवन में लाएं और हमारे प्लेटफॉर्म पर गैलरी सुविधा को सक्षम करके इसे दुनिया में प्रदर्शित करें।";
 
   @override
   String get enableGallery => "गैलरी सक्षम करें";
@@ -2193,7 +2274,8 @@ class LanguageHi extends BaseLanguage {
   String get allGroupMembers => "सभी समूह सदस्य";
 
   @override
-  String get groupInvitationsSubtitle => "इस समूह के किन सदस्यों को दूसरों को आमंत्रित करने की अनुमति है?";
+  String get groupInvitationsSubtitle =>
+      "इस समूह के किन सदस्यों को दूसरों को आमंत्रित करने की अनुमति है?";
 
   @override
   String get groupInvitations => "समूह निमंत्रण";
@@ -2214,7 +2296,8 @@ class LanguageHi extends BaseLanguage {
   String get addMedia => "मीडिया जोड़ो";
 
   @override
-  String get albumDeleteConfirmation => "क्या आप सुनिश्चित हैं कि आप इस एल्बम को हटाना चाहते हैं?";
+  String get albumDeleteConfirmation =>
+      "क्या आप सुनिश्चित हैं कि आप इस एल्बम को हटाना चाहते हैं?";
 
   @override
   String get createAlbum => "एल्बम बनाओ";
@@ -2223,7 +2306,8 @@ class LanguageHi extends BaseLanguage {
   String get addYourAlbum => "अपना एल्बम जोड़ें";
 
   @override
-  String get pushYourCreativityWithAlbums => "एल्बमों के साथ अपनी रचनात्मकता को धक्का दें और अपने क्षणों को अपने सर्कल के साथ दिखाएं।";
+  String get pushYourCreativityWithAlbums =>
+      "एल्बमों के साथ अपनी रचनात्मकता को धक्का दें और अपने क्षणों को अपने सर्कल के साथ दिखाएं।";
 
   @override
   String get create => "बनाएं";

@@ -10,7 +10,7 @@ const APP_ICON = "assets/app_icon.png";
 const SPLASH_SCREEN_IMAGE = 'assets/images/splash_image.png';
 
 /// NOTE: Do not add slash (/) or (https://) or (http://) at the end of your domain.
-const WEB_SOCKET_DOMAIN = "apps.iqonic.design";
+const WEB_SOCKET_DOMAIN = "travello.kz";
 
 /// NOTE: Do not add slash (/) at the end of your domain.
 const DOMAIN_URL = "https://travello.kz";

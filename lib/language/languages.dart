@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 abstract class BaseLanguage {
-  static BaseLanguage? of(BuildContext context) => Localizations.of<BaseLanguage>(context, BaseLanguage);
+  static BaseLanguage? of(BuildContext context) =>
+      Localizations.of<BaseLanguage>(context, BaseLanguage);
 
   String get earnedBadges;
   String get userNotAchievedLevel;
@@ -1286,6 +1287,8 @@ abstract class BaseLanguage {
   String get administrator;
 
   String get noMembersFound;
+
+  String get noDirectionFound;
 
   String get groupInvites;
 

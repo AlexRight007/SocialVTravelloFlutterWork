@@ -2025,6 +2025,9 @@ class LanguageEn extends BaseLanguage {
   String get noMembersFound => 'No Members Found';
 
   @override
+  String get noDirectionFound => 'No directions found';
+
+  @override
   String get groupInvites => 'Group Invites';
 
   @override

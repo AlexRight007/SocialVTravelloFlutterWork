@@ -1657,7 +1657,6 @@ class LanguageRu extends BaseLanguage {
   String get report => 'Пожаловаться';
 
   @override
-  
   String get blockText =>
       'Они не смогут найти ваш профиль, записи или историю на Dami Tour. Они не будут уведомлены о том, что вы заблокировали их.';
 
@@ -2033,6 +2032,9 @@ class LanguageRu extends BaseLanguage {
 
   @override
   String get noMembersFound => 'Участники не найдены';
+
+  @override
+  String get noDirectionFound => 'Направления не найдены';
 
   @override
   String get groupInvites => 'Приглашения в группу';

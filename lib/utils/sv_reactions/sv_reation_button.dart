@@ -94,10 +94,8 @@ class _FlutterReactionButtonState extends State<FlutterReactionButton> {
         key: _buttonKey,
         highlightColor: widget.highlightColor,
         splashColor: widget.splashColor,
-        onLongPress: () => _showReactionButtons(context),
-        onTap: () {
-          widget.callback?.call();
-        },
+        onLongPress: () => widget.callback?.call(),
+        onTap: () => _showReactionButtons(context),
         child: (_selectedReaction ?? widget.reactions[0]).icon,
       );
 

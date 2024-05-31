@@ -54,13 +54,13 @@ class _LocationDropdownWidgetState extends State<LocationDropdownWidget> {
                   .bodySmall!
                   .copyWith(color: context.iconColor),
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            Icon(
-              Icons.location_on_outlined,
-              color: context.accentColor,
-            ),
+            // const SizedBox(
+            //   width: 10,
+            // ),
+            // Icon(
+            //   Icons.location_on_outlined,
+            //   color: context.accentColor,
+            // ),
             Spacer(),
             DropdownButtonHideUnderline(
               child: DropdownButton<int>(
